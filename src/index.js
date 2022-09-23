@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Collapse } from "react-bootstrap";
 import ReactDOM from "react-dom/client";
 import Modal from "./Modal/Modal";
 import content from "./content.json";
@@ -16,7 +17,15 @@ class App extends React.Component {
       content: content,
       modalContent: "",
       showModal: false,
+      currentItem: {
+        heading: "",
+        sections: [],
+      }
     };
+  }
+
+  setCurrentItem(item) {
+    this.setState({ currentItem: item });
   }
 
   toggleModal() {
@@ -28,10 +37,23 @@ class App extends React.Component {
     this.setState({ showModal: true });
   }
 
-  fetchContent(name) {
+  fetchContent(index) {
     return (e) => {
+       const newModalContent = all[index]
+
       this.setState({
-        modalContent: all[name],
+        modalContent: newModalContent.raw,
+        currentItem: {
+          heading: newModalContent.name,
+          sections: [{
+            heading: "Readme.md",
+            content: <RenderedMarkdown Markdown={newModalContent.raw}></RenderedMarkdown>,
+          },
+          {
+            heading: "other",
+            content: "text"
+          }],
+        }
       });
       this.showModal();
     };
@@ -54,29 +76,67 @@ class App extends React.Component {
             <MarkdownItem
               key={index}
               item={item}
-              onClick={this.fetchContent(item.name)}
+              onClick={this.fetchContent(index)}
             />
           ))}
         </div>
-        <Modal
+        <CurrentPost
           show={this.state.showModal}
           onHide={this.hideModal.bind(this)}
           setShow={this.setShowModal.bind(this)}
+          heading={this.state.currentItem.heading}
+          sections={this.state.currentItem.sections}
         >
-          <RenderedMarkdown Markdown={this.state.modalContent} />
-        </Modal>
+        </CurrentPost>
       </div>
     );
   }
 }
 
+function PostSection({ heading, content, key }) {
+  return (<Collapsible key={key} title={heading}>{content}</Collapsible>)
+}
+
+
+function CurrentPost(props) {
+  return (<><Modal
+    show={props.show}
+    onHide={props.onHide}
+    setShow={props.setShow}
+    heading={props.heading}
+  >
+    {
+      props.sections.map(
+        (section, key) => (<PostSection heading={section.heading} key={key} content={section.content} ></PostSection>)
+      )
+    }
+  </Modal>
+  </>
+  )
+}
+
+function Collapsible({ children, title }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div onClick={() => setOpen(!open)} >
+      <h3>{title ? title : "No Title."}</h3>
+      <Collapse in={open}>
+        <div id="testing collapse">
+          {children}
+        </div>
+      </Collapse>
+    </div>
+  )
+}
+
 const MarkdownItem = ({ item, onClick }) => {
   return (<div onClick={onClick}>
-      <h2>{item.name}</h2>
-      <p>lorem ipsum</p>
-      <p>test test test</p>
-    </div>
-    );
+    <h2>{item.name}</h2>
+    <p>lorem ipsum</p>
+    <p>test test test</p>
+  </div>
+  );
 };
 
 // ========================================
