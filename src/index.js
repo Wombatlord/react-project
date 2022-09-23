@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Markdown Viewer</h1>
-        <ul>
+        <div>
           {this.state.content.map((item, index) => (
             <MarkdownItem
               key={index}
@@ -57,7 +57,7 @@ class App extends React.Component {
               onClick={this.fetchContent(item.name)}
             />
           ))}
-        </ul>
+        </div>
         <Modal
           show={this.state.showModal}
           onHide={this.hideModal.bind(this)}
@@ -71,7 +71,12 @@ class App extends React.Component {
 }
 
 const MarkdownItem = ({ item, onClick }) => {
-  return <li onClick={onClick}>{item.name}</li>;
+  return (<div onClick={onClick}>
+      <h2>{item.name}</h2>
+      <p>lorem ipsum</p>
+      <p>test test test</p>
+    </div>
+    );
 };
 
 // ========================================

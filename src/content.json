@@ -10,5 +10,9 @@
   {
     "name": "2.md",
     "src": "https://raw.githubusercontent.com/tjweldon/mandlebars/main/README.md?plain=1"
+  },
+  {
+    "name": "3.md",
+    "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1"
   }
 ]
