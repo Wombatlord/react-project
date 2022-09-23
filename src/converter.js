@@ -1,20 +1,12 @@
-import { createElement, Fragment, useEffect, useState } from "react";
-import { unified } from "unified";
-import rehypeParse from "rehype-parse";
-import rehypeReact from "rehype-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 
-function HTML2down({ Content, setContent }) {
-  useEffect(() => {
-    unified()
-      .use(rehypeParse, { fragment: true })
-      .use(rehypeReact, { createElement, Fragment })
-      .process(Content)
-      .then((file) => {
-        setContent(file.result);
-      });
-  }, [Content, setContent]);
-
-  return Content;
+export function RenderedMarkdown({ Markdown }) {
+  return (
+    <ReactMarkdown
+      children={Markdown ? Markdown : "# Nothing to display"}
+      rehypePlugins={[remarkGfm, rehypeHighlight]}
+    />
+  );
 }
-
-export default HTML2down;
