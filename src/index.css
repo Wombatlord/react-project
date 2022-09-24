@@ -21,6 +21,10 @@ div {
   color: white;
 }
 
+h2 {
+  font: 40px "Oswald";
+}
+
 ol,
 ul {
   padding-left: 30px;
@@ -34,6 +38,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: right;
+  margin-bottom: 0px;
   padding-bottom: 0px;
 }
 
@@ -66,13 +71,17 @@ ul {
 .nav-link {
   color: white;
   margin: 25px;
+  border: 2px solid #262626;
+  border-radius: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .nav-link:hover {
   color: gold;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 2px;
+  margin-right: 25px;
+  margin-left: 25px;
+  padding: 8px;
   border: 2px solid white;
   border-radius: 25px;
 }
@@ -88,16 +97,9 @@ ul {
   color: white;
 }
 
+
 .navbar-nav .nav-link.active,
 .navbar-nav .show>.nav-link {
-  color: gold;
-}
-
-.basic-nav-dropdown {
-  padding: 100px;
-}
-
-a.basic-nav-dropdown:hover {
   color: gold;
 }
 
