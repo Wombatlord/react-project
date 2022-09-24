@@ -72,8 +72,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div><MyNavBar gitLink={this.state.gitLink}></MyNavBar></div>
-        <h1>Markdown Viewer</h1>
+        <flex><MyNavBar gitLink={this.state.gitLink}></MyNavBar></flex>
+        <h1 className="markdownViewer">Markdown Viewer</h1>
         <myDiv>
           {this.state.content.map((item, index) => (
             <MarkdownItem

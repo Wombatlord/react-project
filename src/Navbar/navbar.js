@@ -14,6 +14,7 @@ function MyNavBar(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
+                        <div className='container'>
                         <Nav.Link href={gitLink}>{gitLink}</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -26,6 +27,7 @@ function MyNavBar(props) {
                                 Separated link
                             </NavDropdown.Item>
                         </NavDropdown>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

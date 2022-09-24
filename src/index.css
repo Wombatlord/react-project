@@ -39,6 +39,22 @@ ul {
   padding-left: 30px;
 }
 
+.me-auto {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.markdownViewer {
+  margin: 10px;
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
 .modal {
   font-family: "Oswald", monospace;
   background-color: #141414;
@@ -62,16 +78,19 @@ ul {
 
 .nav-link {
   color: white;
+  margin-right: 25px;
 }
 
 .nav-link:hover {
   color: gold;
+  border: 2px solid white;
   border-radius: 25px;
 }
 
 .nav-link:active {
   color: white;
   background-color: white;
+  border: 2px solid white;
   border-radius: 25px;
 }
 
