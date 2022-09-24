@@ -21,19 +21,6 @@ div {
   color: white;
 }
 
-myDiv {
-  position: absolute;
-  left: 0%;
-  font: 14px "Oswald";
-  background-color: #262626;
-  color: white;
-  padding: 15px 35px;
-  border: none;
-  cursor: default;
-  width: 100%;
-}
-
-
 ol,
 ul {
   padding-left: 30px;
@@ -46,13 +33,13 @@ ul {
 .container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: right;
+  padding-bottom: 0px;
 }
 
 .markdownViewer {
-  margin: 10px;
-  padding-top: 25px;
-  padding-bottom: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .modal {
@@ -78,11 +65,14 @@ ul {
 
 .nav-link {
   color: white;
-  margin-right: 25px;
+  margin: 25px;
 }
 
 .nav-link:hover {
   color: gold;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 2px;
   border: 2px solid white;
   border-radius: 25px;
 }
@@ -100,6 +90,14 @@ ul {
 
 .navbar-nav .nav-link.active,
 .navbar-nav .show>.nav-link {
+  color: gold;
+}
+
+.basic-nav-dropdown {
+  padding: 100px;
+}
+
+a.basic-nav-dropdown:hover {
   color: gold;
 }
 

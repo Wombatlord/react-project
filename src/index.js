@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gitLink : "https://github.com/Wombatlord",
+      gitLink: "https://github.com/Wombatlord",
       content: content,
       modalContent: "",
       showModal: false,
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   fetchContent(index) {
     return (e) => {
-       const newModalContent = all[index]
+      const newModalContent = all[index]
 
       this.setState({
         modalContent: newModalContent.raw,
@@ -72,9 +72,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <flex><MyNavBar gitLink={this.state.gitLink}></MyNavBar></flex>
+        <div>
+          <MyNavBar gitLink={this.state.gitLink}></MyNavBar>
+        </div>
         <h1 className="markdownViewer">Markdown Viewer</h1>
-        <myDiv>
+        <div>
           {this.state.content.map((item, index) => (
             <MarkdownItem
               key={index}
@@ -82,7 +84,7 @@ class App extends React.Component {
               onClick={this.fetchContent(index)}
             />
           ))}
-        </myDiv>
+        </div>
         <CurrentPost
           show={this.state.showModal}
           onHide={this.hideModal.bind(this)}
