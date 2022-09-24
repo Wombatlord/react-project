@@ -1,14 +1,17 @@
 [
   {
     "name": "0.md",
+    "description": "lorem ipsum",
     "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1"
   },
   {
     "name": "1.md",
+    "description": "other ipsum",
     "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1"
   },
   {
     "name": "2.md",
+    "description": "different ipsum",
     "src": "https://raw.githubusercontent.com/tjweldon/mandlebars/main/README.md?plain=1"
   },
   {

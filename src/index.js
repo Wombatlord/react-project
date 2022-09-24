@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
 import ReactDOM from "react-dom/client";
 import Modal from "./Modal/Modal";
+import MyNavBar from "./Navbar/navbar"
 import content from "./content.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -14,6 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      gitLink : "https://github.com/Wombatlord",
       content: content,
       modalContent: "",
       showModal: false,
@@ -70,8 +72,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div><MyNavBar gitLink={this.state.gitLink}></MyNavBar></div>
         <h1>Markdown Viewer</h1>
-        <div>
+        <myDiv>
           {this.state.content.map((item, index) => (
             <MarkdownItem
               key={index}
@@ -79,7 +82,7 @@ class App extends React.Component {
               onClick={this.fetchContent(index)}
             />
           ))}
-        </div>
+        </myDiv>
         <CurrentPost
           show={this.state.showModal}
           onHide={this.hideModal.bind(this)}
@@ -133,8 +136,7 @@ function Collapsible({ children, title }) {
 const MarkdownItem = ({ item, onClick }) => {
   return (<div onClick={onClick}>
     <h2>{item.name}</h2>
-    <p>lorem ipsum</p>
-    <p>test test test</p>
+    <p>{item.description ? item.description : "No Description"}</p>
   </div>
   );
 };

@@ -1,10 +1,12 @@
 body {
   font: 14px "Major Mono Display", monospace;
   margin: 20px;
+  background-color: #262626;
 }
 
+
 button {
-  font: 14px "Bungee Spice", cursive;
+  font: 14px "Oswald", cursive;
   background-color: #888;
   color: white;
   padding: 14px 20px;
@@ -13,6 +15,25 @@ button {
   width: 100%;
 }
 
+
+div {
+  background-color: #262626;
+  color: white;
+}
+
+myDiv {
+  position: absolute;
+  left: 0%;
+  font: 14px "Oswald";
+  background-color: #262626;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  cursor: default;
+  width: 100%;
+}
+
+
 ol,
 ul {
   padding-left: 30px;
@@ -20,6 +41,60 @@ ul {
 
 .modal {
   font-family: "Oswald", monospace;
+  background-color: #141414;
+}
+
+.modal-footer {
+  background-color: #262626;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: gold;
+}
+
+.navbar-brand:focus {
+  color: gold;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: gold;
+  border-radius: 25px;
+}
+
+.nav-link:active {
+  color: white;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.nav-link:focus {
+  color: white;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
+  color: gold;
+}
+
+.dropdown-menu {
+  background-color: #262626;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:active {
+  color: white;
+  background-color: gold;
 }
 
 ul {
