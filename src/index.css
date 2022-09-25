@@ -43,8 +43,17 @@ ul {
 }
 
 .markdownViewer {
+  width: 100%;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.mdItem {
+  width: 10%;
+}
+
+.mdDescription {
+  width: 100%;
 }
 
 .modal {
@@ -71,7 +80,7 @@ ul {
 .nav-link {
   color: white;
   margin: 25px;
-  border: 2px solid #262626;
+  border: 2px solid transparent;
   border-radius: 25px;
   padding-left: 0px;
   padding-right: 0px;

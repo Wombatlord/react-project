@@ -76,7 +76,7 @@ class App extends React.Component {
           <MyNavBar gitLink={this.state.gitLink}></MyNavBar>
         </div>
         <h1 className="markdownViewer">Markdown Viewer</h1>
-        <div>
+        <div className="mdItem">
           {this.state.content.map((item, index) => (
             <MarkdownItem
               key={index}
@@ -138,8 +138,14 @@ function Collapsible({ children, title }) {
 const MarkdownItem = ({ item, onClick }) => {
   return (<div onClick={onClick}>
     <h2>{item.name}</h2>
-    <p>{item.description ? item.description : "No Description"}</p>
+    <Synopsis item={item}/>
   </div>
+  );
+};
+
+const Synopsis = ({ item }) => {
+  return (
+    <p className="mdDescription">{item.description ? item.description : "No Description More Text More Text More Text"}</p>
   );
 };
 
