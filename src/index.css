@@ -108,6 +108,7 @@ ul {
 div.mdItem {
   margin: 15px;
   max-width: fit-content;
+  cursor: pointer;
 }
 
 
