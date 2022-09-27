@@ -78,11 +78,11 @@ class App extends React.Component {
         <h1 className="markdownViewer">Markdown Viewer</h1>
         <div className="mdItem">
           {this.state.content.map((item, index) => (
-            <MarkdownItem
+            <p><MarkdownItem
               key={index}
               item={item}
               onClick={this.fetchContent(index)}
-            />
+            /></p>
           ))}
         </div>
         <CurrentPost

@@ -1,6 +1,7 @@
 body {
   font: 14px "Major Mono Display", monospace;
   margin: 20px;
+  margin-top: 0px;
   background-color: #262626;
 }
 
@@ -23,11 +24,28 @@ div {
 
 h2 {
   font: 40px "Oswald";
+  border-bottom: 3px solid transparent;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  width: 10px;
+  animation: fadeIn 10s;
 }
+
+h2:hover {
+  color: gold;
+  border-bottom: 3px solid gold;
+  transition: width 2s;
+  width: 200px;
+}
+
 
 ol,
 ul {
   padding-left: 30px;
+}
+
+.navbar {
+  padding-top: 0px;
 }
 
 .me-auto {
@@ -39,21 +57,80 @@ ul {
   align-items: center;
   justify-content: right;
   margin-bottom: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 8px;
 }
 
 .markdownViewer {
-  width: 100%;
+  font-size: 20px;
+  width: 50%;
+  margin-left: 25px;
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 25px;
+  animation: fadeIn 10s;
 }
 
-.mdItem {
-  width: 10%;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
+@keyframes fadeInMove {
+  from {
+    opacity: 0;
+    left: 0px;
+  }
+
+  to {
+    opacity: 1;
+    left: 50px;
+    color: gold;
+  }
+
+}
+
+@keyframes growBar {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 10%;
+    border-bottom: 2px gold solid;
+  }
+}
+
+
+div.mdItem {
+  margin: 15px;
+  max-width: fit-content;
+}
+
+
+.mdDescription:hover {
+  font-size: 40px;
+  position: relative;
+  animation-name: fadeInMove;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  border-top: 3px gold solid;
+  border-left: 3px gold solid;
+  border-radius: 2px;
+}
+
 
 .mdDescription {
-  width: 100%;
+  opacity: 15%;
+  /* width: 50%; */
+  margin-left: 0px;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .modal {
@@ -65,8 +142,16 @@ ul {
   background-color: #262626;
 }
 
+.navbar>.container {
+  max-width: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 25px;
+}
+
 .navbar-brand {
   color: white;
+  font-size: 40px;
 }
 
 .navbar-brand:hover {
@@ -79,11 +164,14 @@ ul {
 
 .nav-link {
   color: white;
+  font-size: 15px;
   margin: 25px;
+  margin-bottom: 5px;
   border: 2px solid transparent;
   border-radius: 25px;
   padding-left: 0px;
   padding-right: 0px;
+  animation: fadeIn 10s;
 }
 
 .nav-link:hover {
@@ -92,6 +180,7 @@ ul {
   margin-left: 25px;
   padding: 8px;
   border: 2px solid white;
+  /* animation: borderFade 8s; */
   border-radius: 25px;
 }
 
@@ -106,18 +195,22 @@ ul {
   color: white;
 }
 
-
 .navbar-nav .nav-link.active,
 .navbar-nav .show>.nav-link {
   color: gold;
 }
 
 .dropdown-menu {
-  background-color: #262626;
+  background-color: gold;
 }
 
 .dropdown-item {
+  color: #262626;
+}
+
+.dropdown-item:hover {
   color: white;
+  background-color: #262626;
 }
 
 .dropdown-item:active {

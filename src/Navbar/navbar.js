@@ -10,15 +10,15 @@ function MyNavBar(props) {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home">JStoneDev</Navbar.Brand>
+                <Navbar.Brand href="#home">://JStone_Dev</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <div className='container'>
-                        <Nav.Link href={gitLink}>{gitLink}</Nav.Link>
+                        <Nav.Link href={gitLink}>github/wombatlord</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
+                            <NavDropdown.Item onClick={() => console.log("ACTION CLICK")} href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => console.log("ANOTHER ACTION CLICK")} href="#action/3.2">
                                 Another action
                             </NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
