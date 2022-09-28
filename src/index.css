@@ -16,28 +16,14 @@ button {
   width: 100%;
 }
 
-
 div {
   background-color: #262626;
   color: white;
 }
 
 h2 {
-  font: 40px "Oswald";
-  border-bottom: 3px solid transparent;
-  margin-left: 0px;
-  margin-bottom: 5px;
-  width: 10px;
-  animation: fadeIn 10s;
+  cursor: pointer;
 }
-
-h2:hover {
-  color: gold;
-  border-bottom: 3px solid gold;
-  transition: width 2s;
-  width: 200px;
-}
-
 
 ol,
 ul {
@@ -61,11 +47,7 @@ ul {
 }
 
 .markdownViewer {
-  font-size: 20px;
-  width: 50%;
-  margin-left: 25px;
-  padding-top: 0px;
-  padding-bottom: 25px;
+  margin-block-end: 5%;
   animation: fadeIn 10s;
 }
 
@@ -93,6 +75,7 @@ ul {
 
 }
 
+
 @keyframes growBar {
   0% {
     width: 0%;
@@ -104,39 +87,35 @@ ul {
   }
 }
 
+div .left-align-card {
+  text-align: left;
+  justify-content: left;
+}
 
-div.mdItem {
+div .right-align-card {
+  text-align: right;
+  justify-content: right;
+}
+
+div .mdItem {
   margin: 15px;
-  max-width: fit-content;
-  cursor: pointer;
 }
-
-
-.mdDescription:hover {
-  font-size: 40px;
-  position: relative;
-  animation-name: fadeInMove;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  opacity: 1;
-  border-top: 3px gold solid;
-  border-left: 3px gold solid;
-  border-radius: 2px;
-}
-
 
 .mdDescription {
   opacity: 15%;
-  /* width: 50%; */
-  margin-left: 0px;
-  padding-left: 25px;
-  padding-top: 15px;
-  padding-bottom: 10px;
 }
 
 .modal {
   font-family: "Oswald", monospace;
   background-color: #141414;
+}
+
+.modal-dialog {
+  border-radius: var(--bs-modal-border-radius);
+}
+
+.modal-content {
+  background-color: #262626;
 }
 
 .modal-footer {

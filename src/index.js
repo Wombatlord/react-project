@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Collapse } from "react-bootstrap";
+import { Collapse, Container, Row, Col, Stack } from "react-bootstrap";
 import ReactDOM from "react-dom/client";
 import Modal from "./Modal/Modal";
 import MyNavBar from "./Navbar/navbar"
@@ -42,6 +42,7 @@ class App extends React.Component {
   fetchContent(index) {
     return (e) => {
       const newModalContent = all[index]
+      console.log("fetchContent called with", index);
 
       this.setState({
         modalContent: newModalContent.raw,
@@ -75,16 +76,11 @@ class App extends React.Component {
         <div>
           <MyNavBar gitLink={this.state.gitLink}></MyNavBar>
         </div>
-        <h1 className="markdownViewer">Markdown Viewer</h1>
-        <div className="mdItem">
-          {this.state.content.map((item, index) => (
-            <p><MarkdownItem
-              key={index}
-              item={item}
-              onClick={this.fetchContent(index)}
-            /></p>
-          ))}
-        </div>
+        <PageBody>
+          <h1 className="markdownViewer">Projects</h1>
+          <ProjectList items={this.state.content} clickHandlers={this.fetchContent.bind(this)}>
+          </ProjectList>
+        </PageBody>
         <CurrentPost
           show={this.state.showModal}
           onHide={this.hideModal.bind(this)}
@@ -98,8 +94,8 @@ class App extends React.Component {
   }
 }
 
-function PostSection({ heading, content, key }) {
-  return (<Collapsible key={key} title={heading}>{content}</Collapsible>)
+function PostSection({ heading, content }) {
+  return (<Collapsible title={heading}>{content}</Collapsible>)
 }
 
 
@@ -120,6 +116,30 @@ function CurrentPost(props) {
   )
 }
 
+function ProjectList({ items, clickHandlers }) {
+  return (
+    <Container
+      className="mdItem"
+    >
+      <Col>{
+        items.map((item, index) => (
+          <Row>
+            <MarkdownItem
+              key={index}
+              item={item}
+              onClick={clickHandlers(index)}
+              left={(index % 2 === 0)}
+            />
+          </Row>
+        ))}</Col>
+    </Container>
+  );
+}
+
+function PageBody({ children }) {
+  return (<div className="mx-auto" style={{ width: "65%" }}>{children}</div >);
+}
+
 function Collapsible({ children, title }) {
   const [open, setOpen] = useState(false);
 
@@ -135,17 +155,22 @@ function Collapsible({ children, title }) {
   )
 }
 
-const MarkdownItem = ({ item, onClick }) => {
-  return (<div onClick={onClick}>
-    <h2>{item.name}</h2>
-    <Synopsis item={item}/>
-  </div>
+const MarkdownItem = ({ item, onClick, left }) => {
+  return (
+    <Stack gap={4}>
+      <Stack direction="horizontal">
+          <h2 className={left ? "" : "ms-auto"} onClick={onClick}>{item.name}</h2>
+      </Stack>
+      <Stack direction="horizontal" gap={4}>
+        <Synopsis item={item} left={left} />
+      </Stack>
+    </Stack>
   );
 };
 
-const Synopsis = ({ item }) => {
+const Synopsis = ({ item, left }) => {
   return (
-    <p className="mdDescription">{item.description ? item.description : "No Description More Text More Text More Text"}</p>
+    <p className={left ? "" : "ms-auto"} style={{paddingInline: "5%"}}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
   );
 };
 
