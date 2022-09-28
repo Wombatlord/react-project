@@ -159,7 +159,7 @@ const MarkdownItem = ({ item, onClick, left }) => {
   return (
     <Stack gap={4}>
       <Stack direction="horizontal">
-          <h2 className={left ? "" : "ms-auto"} onClick={onClick}>{item.name}</h2>
+          <h2 className={left ? "" : "ms-auto"} onClick={onClick} id={left ? "projectTitleLeft" :"projectTitleRight"}>{item.name}</h2>
       </Stack>
       <Stack direction="horizontal" gap={4}>
         <Synopsis item={item} left={left} />
