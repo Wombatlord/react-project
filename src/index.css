@@ -28,18 +28,36 @@ h2 {
 
 /* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
 /* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
+/* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
 
 #projectTitleLeft {
   font: 40px "Oswald";
-  border-bottom: 3px solid transparent;
+  position: relative;
   animation: fadeIn 10s;
 }
 
 #projectTitleLeft:hover {
-  font: 60px "Oswald";  
+  font: 45px "Oswald";  
   color: gold;
-  border-bottom: 3px solid gold;
-  animation: growBar 2s forwards;
+  animation: animReset 2s forwards;
+}
+
+#projectTitleLeft::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: gold;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 1s ease;
+}
+
+#projectTitleLeft:hover::before {
+  transform: scaleX(75%);
 }
 
 #projectTitleRight {
@@ -50,9 +68,9 @@ h2 {
 }
 
 #projectTitleRight:hover {
-  font: 60px "Oswald";
+  font: 45px "Oswald";
   color: gold;
-  animation: growBarRight 2s forwards;
+  animation: animReset 2s forwards;
 }
 
 #projectTitleRight::before {
@@ -70,7 +88,7 @@ h2 {
 }
 
 #projectTitleRight:hover::before {
-  transform: scaleX(225%);
+  transform: scaleX(75%);
 }
 
 ol,
@@ -99,13 +117,13 @@ ul {
   animation: fadeIn 15s;
 }
 
-@keyframes growBarRight {
+@keyframes animReset {
   from {      
-      width: 35%;
+      width: 75%;
   }
 
   to {      
-      width: 35%;
+      width: 75%;
   }
 }
 
@@ -115,7 +133,7 @@ ul {
   }
 
   8% {
-    opacity: 0.1%
+    opacity: 0.3%
   }
 
   100% {
@@ -161,6 +179,12 @@ div .right-align-card {
 
 div .mdItem {
   margin: 15px;
+}
+
+p {
+  font: 20px "Oswald";
+  width: 65%;
+  margin-block-end: 5%;
 }
 
 .mdDescription {
