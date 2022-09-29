@@ -16,7 +16,7 @@
   },
   {
     "name": "St. Germain",
-    "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history is awesome, so I built this discord bot for generating tarot spreads! ",
+    "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
     "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1"
   }
 ]
