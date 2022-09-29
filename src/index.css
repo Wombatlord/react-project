@@ -23,7 +23,6 @@ div {
 
 h2 {
   cursor: pointer;
-  border-bottom: 3px solid transparent;
 }
 
 /* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
@@ -34,10 +33,11 @@ h2 {
   font: 40px "Oswald";
   position: relative;
   animation: fadeIn 10s;
+  min-height: 75px;
 }
 
 #projectTitleLeft:hover {
-  font: 45px "Oswald";  
+  font: 45px "Oswald";
   color: gold;
   animation: animReset 2s forwards;
 }
@@ -48,7 +48,7 @@ h2 {
   display: block;
   width: 100%;
   height: 3px;
-  bottom: -5px;
+  bottom: 5px;
   left: 0;
   background-color: gold;
   transform: scaleX(0);
@@ -64,6 +64,7 @@ h2 {
   font: 40px "Oswald";
   position: relative;
   animation: fadeIn 10s;
+  min-height: 75px;
   text-align: right;
 }
 
@@ -79,7 +80,7 @@ h2 {
   display: block;
   width: 100%;
   height: 3px;
-  bottom: -5px;
+  bottom: 5px;
   left: 0;
   background-color: gold;
   transform: scaleX(0);
@@ -118,12 +119,12 @@ ul {
 }
 
 @keyframes animReset {
-  from {      
-      width: 75%;
+  from {
+    width: 75%;
   }
 
-  to {      
-      width: 75%;
+  to {
+    width: 75%;
   }
 }
 
@@ -165,17 +166,6 @@ ul {
     border-bottom: 3px gold solid;
   }
 }
-
-
-/* div .left-align-card {
-  text-align: left;
-  justify-content: left;
-} */
-/* 
-div .right-align-card {
-  text-align: right;
-  justify-content: right;
-} */
 
 div .mdItem {
   margin: 15px;
