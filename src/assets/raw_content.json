@@ -19,7 +19,7 @@
     },
     {
         "name": "St. Germain",
-        "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history is awesome, so I built this discord bot for generating tarot spreads! A",
+        "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
         "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1",
         "raw": "# St_Germain\n\nA python project for learning about working with an API.\nImplemented in python with discord.py.\n\nUses https://rws-cards-api.herokuapp.com/ for tarot data.\n\n## Database Management\n\nThe database management CLI for St Germaine is known as golem. Golem can be invoked in the following ways:\n\n\n### Flush\nTo drop and replace the database schema:\n```shell\npython golem.py flush\n```\n__WARNING__: This will purge any data currently in the database!\n\n### Run Migrations\nTo run pending migrations:\n```shell\npython golem.py migrate\n```\n\n"
     }
