@@ -16,28 +16,87 @@ button {
   width: 100%;
 }
 
-
 div {
   background-color: #262626;
   color: white;
 }
 
 h2 {
+  cursor: pointer;
+}
+
+p {
+  font: 20px "Oswald";
+  width: 65%;
+  margin-block-end: 5%;
+}
+
+/* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
+/* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
+/* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
+
+#projectTitleLeft {
   font: 40px "Oswald";
-  border-bottom: 3px solid transparent;
-  margin-left: 0px;
-  margin-bottom: 5px;
-  width: 10px;
+  position: relative;
   animation: fadeIn 10s;
+  min-height: 75px;
 }
 
-h2:hover {
+#projectTitleLeft:hover {
+  font: 45px "Oswald";
   color: gold;
-  border-bottom: 3px solid gold;
-  transition: width 2s;
-  width: 200px;
+  animation: animReset 2s forwards;
 }
 
+#projectTitleLeft::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: 5px;
+  left: 0;
+  background-color: gold;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 1s ease;
+}
+
+#projectTitleLeft:hover::before {
+  transform: scaleX(75%);
+}
+
+#projectTitleRight {
+  font: 40px "Oswald";
+  position: relative;
+  animation: fadeIn 10s;
+  min-height: 75px;
+  text-align: right;
+}
+
+#projectTitleRight:hover {
+  font: 45px "Oswald";
+  color: gold;
+  animation: animReset 2s forwards;
+}
+
+#projectTitleRight::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: 5px;
+  left: 0;
+  background-color: gold;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform 1s ease;
+}
+
+#projectTitleRight:hover::before {
+  transform: scaleX(75%);
+}
 
 ol,
 ul {
@@ -61,17 +120,27 @@ ul {
 }
 
 .markdownViewer {
-  font-size: 20px;
-  width: 50%;
-  margin-left: 25px;
-  padding-top: 0px;
-  padding-bottom: 25px;
-  animation: fadeIn 10s;
+  margin-block-end: 5%;
+  animation: fadeIn 15s;
+}
+
+@keyframes animReset {
+  from {
+    width: 75%;
+  }
+
+  to {
+    width: 75%;
+  }
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
+  }
+
+  8% {
+    opacity: 0.3%
   }
 
   100% {
@@ -90,8 +159,8 @@ ul {
     left: 50px;
     color: gold;
   }
-
 }
+
 
 @keyframes growBar {
   0% {
@@ -99,44 +168,30 @@ ul {
   }
 
   100% {
-    width: 10%;
-    border-bottom: 2px gold solid;
+    width: 75%;
+    border-bottom: 3px gold solid;
   }
 }
 
-
-div.mdItem {
+div .mdItem {
   margin: 15px;
-  max-width: fit-content;
-  cursor: pointer;
 }
-
-
-.mdDescription:hover {
-  font-size: 40px;
-  position: relative;
-  animation-name: fadeInMove;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  opacity: 1;
-  border-top: 3px gold solid;
-  border-left: 3px gold solid;
-  border-radius: 2px;
-}
-
 
 .mdDescription {
   opacity: 15%;
-  /* width: 50%; */
-  margin-left: 0px;
-  padding-left: 25px;
-  padding-top: 15px;
-  padding-bottom: 10px;
 }
 
 .modal {
   font-family: "Oswald", monospace;
   background-color: #141414;
+}
+
+.modal-dialog {
+  border-radius: var(--bs-modal-border-radius);
+}
+
+.modal-content {
+  background-color: #262626;
 }
 
 .modal-footer {

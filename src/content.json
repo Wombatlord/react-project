@@ -1,21 +1,22 @@
 [
   {
-    "name": "0.md",
-    "description": "lorem ipsum",
-    "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1"
+    "name": "JStoneDEV",
+    "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
+    "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md"
   },
   {
-    "name": "1.md",
-    "description": "other ipsum",
+    "name": "Photerm",
+    "description": "An image and video renderer for the terminal. Fun and experimentation is the guiding principle for Photerm. There's a certain inefficiency to this project, but if you ever wanted to send an image as a text file filled with control characters, this is one way to do it!",
     "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1"
   },
   {
-    "name": "2.md",
-    "description": "different ipsum",
-    "src": "https://raw.githubusercontent.com/tjweldon/mandlebars/main/README.md?plain=1"
+    "name": "Last Player On The Left",
+    "description": "A simple podcast streamer for the terminal! Last Player can subscribe to RSS Feeds, retrieve episode lists & descriptions, and play audio!",
+    "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1"
   },
   {
-    "name": "3.md",
+    "name": "St. Germain",
+    "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
     "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1"
   }
 ]

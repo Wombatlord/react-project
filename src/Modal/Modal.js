@@ -8,7 +8,6 @@ function Modal(props) {
   const handleClose = () => setShow(false);
 
   return (
-    <>
       <BSModal show={show} onHide={handleClose}>
         <BSModal.Header closeButton>
           <BSModal.Title>{heading ? heading : "Modal heading"}</BSModal.Title>
@@ -20,7 +19,6 @@ function Modal(props) {
           </Button>
         </BSModal.Footer>
       </BSModal>
-    </>
   );
 }
 
