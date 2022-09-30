@@ -35,20 +35,20 @@ p {
 /* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
 /* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
 
-#projectTitleLeft {
+.projectTitleLeft {
   font: 40px "Oswald";
   position: relative;
   animation: fadeIn 10s;
   min-height: 75px;
 }
 
-#projectTitleLeft:hover {
+.projectTitleLeft:hover {
   font: 45px "Oswald";
   color: gold;
   animation: animReset 2s forwards;
 }
 
-#projectTitleLeft::before {
+.projectTitleLeft::before {
   content: "";
   position: absolute;
   display: block;
@@ -62,11 +62,11 @@ p {
   transition: transform 1s ease;
 }
 
-#projectTitleLeft:hover::before {
+.projectTitleLeft:hover::before {
   transform: scaleX(75%);
 }
 
-#projectTitleRight {
+.projectTitleRight {
   font: 40px "Oswald";
   position: relative;
   animation: fadeIn 10s;
@@ -74,13 +74,13 @@ p {
   text-align: right;
 }
 
-#projectTitleRight:hover {
+.projectTitleRight:hover {
   font: 45px "Oswald";
   color: gold;
   animation: animReset 2s forwards;
 }
 
-#projectTitleRight::before {
+.projectTitleRight::before {
   content: "";
   position: absolute;
   display: block;
@@ -94,7 +94,7 @@ p {
   transition: transform 1s ease;
 }
 
-#projectTitleRight:hover::before {
+.projectTitleRight:hover::before {
   transform: scaleX(75%);
 }
 
