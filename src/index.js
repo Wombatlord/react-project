@@ -4,10 +4,12 @@ import ReactDOM from "react-dom/client";
 import Modal from "./Modal/Modal";
 import MyNavBar from "./Navbar/navbar"
 import content from "./content.json";
+import ProjectPage from "./ProjectPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import all from "./assets/raw_content.json";
 import { RenderedMarkdown } from "./converter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 console.log(content);
 
@@ -70,29 +72,39 @@ class App extends React.Component {
     this.setState({ showModal: flag });
   }
 
+  ProjectPage1 = () => {
+    return (<div><PageBody>
+        <h1 className="markdownViewer">Projects</h1>
+        <ProjectList items={this.state.content} clickHandlers={this.fetchContent.bind(this)}>
+        </ProjectList>
+    </PageBody>
+        <CurrentPost
+            show={this.state.showModal}
+            onHide={this.hideModal.bind(this)}
+            setShow={this.setShowModal.bind(this)}
+            heading={this.state.currentItem.heading}
+            sections={this.state.currentItem.sections}
+        >
+        </CurrentPost>
+    </div>)
+}
+  
+
   render() {
     return (
       <div className="App">
         <div>
           <MyNavBar gitLink={this.state.gitLink}></MyNavBar>
         </div>
-        <PageBody>
-          <h1 className="markdownViewer">Projects</h1>
-          <ProjectList items={this.state.content} clickHandlers={this.fetchContent.bind(this)}>
-          </ProjectList>
-        </PageBody>
-        <CurrentPost
-          show={this.state.showModal}
-          onHide={this.hideModal.bind(this)}
-          setShow={this.setShowModal.bind(this)}
-          heading={this.state.currentItem.heading}
-          sections={this.state.currentItem.sections}
-        >
-        </CurrentPost>
+        <Routes>
+          <Route path="/" element={<this.ProjectPage1 />} />
+        </Routes>
+
       </div>
     );
   }
 }
+
 
 function PostSection({ heading, content }) {
   return (<Collapsible title={heading}>{content}</Collapsible>)
@@ -159,7 +171,7 @@ const MarkdownItem = ({ item, onClick, left }) => {
   return (
     <Stack gap={4}>
       <Stack direction="horizontal">
-          <h2 className={(left ? "" : "ms-auto ") + (left ? "projectTitleLeft" :"projectTitleRight") } onClick={onClick}>{item.name}</h2>
+        <h2 className={(left ? "" : "ms-auto ") + (left ? "projectTitleLeft" : "projectTitleRight")} onClick={onClick}>{item.name}</h2>
       </Stack>
       <Stack direction="horizontal" gap={4}>
         <Synopsis item={item} left={left} />
@@ -170,11 +182,17 @@ const MarkdownItem = ({ item, onClick, left }) => {
 
 const Synopsis = ({ item, left }) => {
   return (
-    <p className={left ? "" : "ms-auto"} style={{paddingInline: "5%"}}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
+    <p className={left ? "" : "ms-auto"} style={{ paddingInline: "5%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
   );
 };
 
 // ========================================
 // This is the application bootstrap
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
