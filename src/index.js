@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 
 import MyNavBar from "./Navbar/navbar"
 import content from "./content.json";
+import rawContent from "./assets/raw_content.json";
+import projectList from "./content.json";
 import ProjectPage from "./ProjectPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -13,21 +15,52 @@ console.log(content);
 
 
 function App() {
-    const params = useParams();
-    return (
-      <div className="App">
-        <div>
-          <MyNavBar gitLink={"https://github.com/Wombatlord"}/>
-        </div>
-        <Routes>
-          <Route path="/" element={<ProjectPage />} />
-          <Route path="/about" element={<p>about placeholder</p>}/>
-          <Route path="/contact" element={<p>contact placeholder</p>}/>
-          <Route path="/show/project/:id" element={<ModalDeepLink id={params.id} />} />
-        </Routes>
+  return (
+    <div className="App">
+      <div>
+        <MyNavBar gitLink={"https://github.com/Wombatlord"} />
       </div>
-    );
+      <Routes>
+        <Route path="/" element={<ModalDeepLink showModal={false} />} />
+        <Route path="/about" element={<p>about placeholder</p>} />
+        <Route path="/contact" element={<p>contact placeholder</p>} />
+        <Route path="/show/project/:id" element={<ModalDeepLink showModal={true} />} />
+      </Routes>
+    </div>
+  );
+}
+
+// getPost pulls the post content from the raw_content.json by the post id.
+const getPost = (postId) => {
+  // Here we can access assets/raw_content.json to inject the item sections into the project page as a prop
+  
+  if (typeof postId !== 'string') {
+    return { currentItem: { heading: "", sections: [] } }
   }
+  
+  console.log("postId", typeof postId)
+  console.log("getPost Called")
+
+  const newModalContent = rawContent[postId];
+  const modalProps = {
+    currentItem: {
+      heading: newModalContent.name,
+      sections: [
+        {
+          heading: "Readme.md",
+          syntax: "markdown",
+          content: newModalContent.raw,
+        },
+        {
+          heading: "other",
+          content: "text"
+        }
+      ],
+    }
+  }
+  console.log("modalProps", modalProps)
+  return modalProps
+}
 
 /*
 let preferredSyntax = (<ModalDeepLink prop1={1} prop2={"2"}><p id="child1"><p id="child2"></ModalDeepLink>)
@@ -38,12 +71,17 @@ let technicallyCorrectFunctionSyntax = ModalDeepLink({prop1: 1, prop2: "2", chil
 
 assert preferredSytax === technicallyCorrectSyntax
 */
-function ModalDeepLink({id}) {
+function ModalDeepLink({ showModal }) {
+  // url path paramater access
+  let { id } = useParams();
+  console.log("id", typeof id)
+  const item = getPost(id).currentItem;
 
-  // Here we can access assets/raw_content.json to inject the item sections into the project page as a prop
-
+  console.log("showModal", showModal)
+  console.log("ModalDeepLink", item);
+  const [show, setShow] = useState(showModal);
   return (
-    <ProjectPage showModal={true} currentItem={{heading: "", sections: []}} />
+    <ProjectPage show={show} setShow={setShow} currentItem={item} content={content} />
   )
 }
 

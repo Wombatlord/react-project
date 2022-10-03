@@ -4,100 +4,41 @@ import Modal from "./Modal/Modal";
 import content from "./content.json";
 import all from "./assets/raw_content.json";
 import { RenderedMarkdown } from "./converter";
+import { useNavigate } from "react-router-dom";
 
+function ProjectPage(props) {
+    const { show, setShow, content } = props;
+    let {currentItem} = props;
 
-class ProjectPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // TODO: Remove the current item from the state
-
-        this.state = {
-            content: content,
-            modalContent: "",
-            showModal: props.showModal,
-            currentItem: {
-                heading: "",
-                sections: [],
-            }
-        };
+    if (!currentItem) {
+        currentItem = { heading: "", sections: [] }
     }
-
-    componentDidMount() {
-        console.log("component did mount called")
-        const currentItemNumber = this.props.currentItemNumber;
-        if (currentItemNumber !== undefined) {
-            this.fetchContent(currentItemNumber)
-        }
-    }
-
-    render() {
-        // TODO: For the heading and sections props of current post change this.state to this.props
-        return (
-            <div>
-                <PageBody>
-                    <h1 className="markdownViewer">Projects</h1>
-                    <ProjectList items={this.state.content} clickHandlers={this.fetchContent.bind(this)}>
-                    </ProjectList>
-                </PageBody>
-                <CurrentPost
-                    show={this.state.showModal}
-                    onHide={this.hideModal.bind(this)}
-                    setShow={this.setShowModal.bind(this)}
-                    heading={this.state.currentItem.heading}
-                    sections={this.state.currentItem.sections}
-                >
-                </CurrentPost>
-            </div>
-        )
-    }
-
-    setCurrentItem(item) {
-        this.setState({ currentItem: item });
-    }
-
-    toggleModal() {
-        const current = this.state.showModal;
-        this.setState({ showModal: current ? this.hideModal() : this.showModal() });
-    }
-
-    showModal() {
-        this.setState({ showModal: true });
-    }
+ 
+    const navigate = useNavigate();
+    const handlers = (idx) => () => navigate(`/show/project/${idx}`);
 
 
-    fetchContent(index) {
-        // 
-        return (e) => {
-            // retrieve the content at the supplied index.
-            const newModalContent = all[index]
-            console.log("fetchContent called with", index);
+    return (
+        <div>
+            <PageBody>
+                <h1
+                    className="markdownViewer"
+                >Projects</h1>
+                <ProjectList
+                    items={content}
+                    clickHandlers={handlers}
+                ></ProjectList>
+            </PageBody>
 
-            this.setState({
-                modalContent: newModalContent.raw,
-                currentItem: {
-                    heading: newModalContent.name,
-                    sections: [{
-                        heading: "Readme.md",
-                        content: <RenderedMarkdown Markdown={newModalContent.raw}></RenderedMarkdown>,
-                    },
-                    {
-                        heading: "other",
-                        content: "text"
-                    }],
-                }
-            });
-            this.showModal();
-        };
-    }
-
-    hideModal() {
-        this.setState({ showModal: false });
-    }
-
-    setShowModal(flag) {
-        this.setState({ showModal: flag });
-    }
+            <CurrentPost
+                showModal={show}
+                setShow={setShow}
+                heading={currentItem.heading}
+                sections={currentItem.sections}
+            >
+            </CurrentPost>
+        </div>
+    )
 }
 
 
@@ -123,13 +64,19 @@ function CurrentPost(props) {
                 props.sections.length === 0 ? "" : (
                     <Modal
                         show={props.show}
-                        onHide={props.onHide}
                         setShow={props.setShow}
                         heading={props.heading}
                     >
                         {
                             props.sections.map(
-                                (section, key) => (<PostSection heading={section.heading} key={key} content={section.content} ></PostSection>)
+                                (section, key) => {
+                                    const sectionContent = section.syntax === "markdown"
+                                        ? <RenderedMarkdown Markdown={section.content}></RenderedMarkdown>
+                                        : section.content;
+
+
+                                    return (<PostSection heading={section.heading} key={key} content={sectionContent} ></PostSection>)
+                                }
                             )
                         }
                     </Modal>
