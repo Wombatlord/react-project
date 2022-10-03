@@ -9,14 +9,6 @@ function MyNavBar(props) {
     const { gitLink } = props;
     const navigate = useNavigate();
 
-    const navigateToContact = () => {
-        navigate("/contact")
-    }
-
-    const navigateToAbout = () => {
-        navigate("/about");
-    }
-
     return (
         <Navbar expand="lg">
             <Container>
@@ -29,14 +21,12 @@ function MyNavBar(props) {
                         <div className='container'>
                             <Nav.Link href={gitLink}>github/wombatlord</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <Link to="/about">
-                                    <NavDropdown.Item onClick={navigateToAbout}>About</NavDropdown.Item>
-                                </Link>
-                                <Link to="/contact">
-                                <NavDropdown.Item onClick={navigateToContact}>
+                                <NavDropdown.Item onClick={() => navigate("/about")}>
+                                    About
+                                </NavDropdown.Item>
+                                <NavDropdown.Item onClick={() => navigate("/contact")}>
                                     Contact
                                 </NavDropdown.Item>
-                                </Link>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">
