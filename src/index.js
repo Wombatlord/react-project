@@ -21,6 +21,8 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<ProjectPage />} />
+          <Route path="/about" element={<p>about placeholder</p>}/>
+          <Route path="/contact" element={<p>contact placeholder</p>}/>
           <Route path="/show/project/:id" element={<ModalDeepLink id={params.id} />} />
         </Routes>
       </div>
