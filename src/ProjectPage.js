@@ -17,7 +17,7 @@ function ProjectPage(props) {
     const navigate = useNavigate();
     const handlers = (idx) => () => navigate(`/show/project/${idx}`);
 
-
+    console.log("show", show)
     return (
         <div>
             <PageBody>
@@ -58,12 +58,13 @@ function Collapsible({ children, title }) {
 }
 
 function CurrentPost(props) {
+    console.log("CurrentPost show", props.showModal);
     return (
         <>
             {
                 props.sections.length === 0 ? "" : (
                     <Modal
-                        show={props.show}
+                        show={props.showModal}
                         setShow={props.setShow}
                         heading={props.heading}
                     >
