@@ -26,7 +26,7 @@ class ProjectPage extends React.Component {
     componentDidMount() {
         console.log("component did mount called")
         const currentItemNumber = this.props.currentItemNumber;
-        if (currentItemNumber != undefined) {
+        if (currentItemNumber !== undefined) {
             this.fetchContent(currentItemNumber)
         }
     }
@@ -64,6 +64,7 @@ class ProjectPage extends React.Component {
     showModal() {
         this.setState({ showModal: true });
     }
+
 
     fetchContent(index) {
         // 
