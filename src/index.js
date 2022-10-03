@@ -17,7 +17,7 @@ function App() {
     return (
       <div className="App">
         <div>
-          <MyNavBar gitLink={"https://github.com/Wombatlord"}></MyNavBar>
+          <MyNavBar gitLink={"https://github.com/Wombatlord"}/>
         </div>
         <Routes>
           <Route path="/" element={<ProjectPage />} />

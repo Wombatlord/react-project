@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Link} from "react-router-dom";
 
 function MyNavBar(props) {
     const { gitLink } = props;
@@ -10,7 +11,7 @@ function MyNavBar(props) {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home">://JStone_Dev</Navbar.Brand>
+            <Link to="/" className='brand-link'><Navbar.Brand>://JStone_Dev</Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

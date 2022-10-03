@@ -210,6 +210,10 @@ div .mdItem {
   font-size: 40px;
 }
 
+.brand-link {
+  text-decoration: transparent;
+}
+
 .navbar-brand:hover {
   color: gold;
 }
