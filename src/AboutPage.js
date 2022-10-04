@@ -1,5 +1,6 @@
 import { PageBody } from "./util"
 
+// Scaffold for content at /about endpoint.
 function AboutPage() {
     return (
         <div>

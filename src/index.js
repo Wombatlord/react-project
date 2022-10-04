@@ -8,7 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+// The top level component for the project.
+// New routes should be added here with an appropriate path
+// Any component included specifically here instead of at an endpoint will render on all pages.
+// eg. MyNavBar will currently render above content at all routes.
 function App() {
   return (
     <div className="App">
