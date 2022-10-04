@@ -3,6 +3,7 @@ body {
   margin: 20px;
   margin-top: 0px;
   background-color: #262626;
+  overflow-y: scroll;
 }
 
 
@@ -119,9 +120,14 @@ ul {
   padding-bottom: 8px;
 }
 
-.markdownViewer {
+.projectPageHeader {
   margin-block-end: 5%;
-  animation: fadeIn 15s;
+  animation: fadeIn 6s;
+}
+
+.aboutHeader {
+  margin-block-end: 5%;
+  animation: fadeIn 6s;
 }
 
 @keyframes animReset {
@@ -177,13 +183,17 @@ div .mdItem {
   margin: 15px;
 }
 
+.modal-width {
+  max-width: 65%;
+}
+
 .mdDescription {
   opacity: 15%;
 }
 
 .modal {
   font-family: "Oswald", monospace;
-  background-color: #141414;
+  background-color: #262626;
 }
 
 .modal-dialog {

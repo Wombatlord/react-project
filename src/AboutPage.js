@@ -5,7 +5,7 @@ function AboutPage() {
         <div>
             <PageBody>
                 <h1
-                    className="markdownViewer"
+                    className="aboutHeader"
                 >About</h1>
             </PageBody>
         </div>

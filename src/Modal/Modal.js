@@ -8,7 +8,7 @@ function Modal(props) {
   const handleClose = () => setShow(false);
 
   return (
-      <BSModal show={show} onHide={handleClose}>
+      <BSModal show={show} onHide={handleClose} dialogClassName="modal-width">
         <BSModal.Header closeButton>
           <BSModal.Title>{heading ? heading : "Modal heading"}</BSModal.Title>
         </BSModal.Header>

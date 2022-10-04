@@ -23,7 +23,7 @@ function ProjectPage({ content }) {
         <div>
             <PageBody>
                 <h1
-                    className="markdownViewer"
+                    className="projectPageHeader"
                 >Projects</h1>
                 <ProjectList
                     items={content}
