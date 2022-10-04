@@ -6,7 +6,6 @@ body {
   overflow-y: scroll;
 }
 
-
 button {
   font: 14px "Oswald", cursive;
   background-color: #888;
@@ -126,6 +125,11 @@ ul {
 }
 
 .aboutHeader {
+  margin-block-end: 5%;
+  animation: fadeIn 6s;
+}
+
+.contactHeader {
   margin-block-end: 5%;
   animation: fadeIn 6s;
 }
