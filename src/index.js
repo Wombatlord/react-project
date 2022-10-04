@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import MyNavBar from "./Navbar/navbar"
 import content from "./content.json";
 import ProjectPage from "./ProjectPage";
+import AboutPage from "./AboutPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,7 +17,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<ProjectPage content={content}/>} />
-        <Route path="/about" element={<p>about placeholder</p>} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<p>contact placeholder</p>} />
       </Routes>
     </div>

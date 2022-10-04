@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Collapse, Container, Row, Col, Stack } from "react-bootstrap";
 import Modal from "./Modal/Modal";
+import { PageBody } from "./util"
 import { RenderedMarkdown } from "./converter";
 import { getPost } from "./Posts"
 
@@ -105,9 +106,6 @@ function ProjectList({ items, clickHandlers }) {
     );
 }
 
-function PageBody({ children }) {
-    return (<div className="mx-auto" style={{ width: "65%" }}>{children}</div >);
-}
 
 function PostSection({ heading, content }) {
     return (<Collapsible title={heading}>{content}</Collapsible>)
