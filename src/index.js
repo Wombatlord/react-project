@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MyNavBar from "./Navbar/navbar"
-import content from "./content.json";
+import projectPageContent from "./content.json";
+import aboutPageContent from "./aboutPageContent.json";
 import ProjectPage from "./ProjectPage";
 import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage"
@@ -20,8 +21,8 @@ function App() {
         <MyNavBar gitLink={"https://github.com/Wombatlord"} />
       </div>
       <Routes>
-        <Route path="/" element={<ProjectPage content={content}/>} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/" element={<ProjectPage content={projectPageContent}/>} />
+        <Route path="/about" element={<AboutPage content={aboutPageContent}/>} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
