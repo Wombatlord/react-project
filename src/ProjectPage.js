@@ -59,9 +59,9 @@ function Collapsible({ children, title }) {
 
     return (
         <div onClick={() => setOpen(!open)} >
-            <h3>{title ? title : "No Title."}</h3>
+            <h3 style={{paddingLeft: "0"}}>{title ? title : "No Title."}</h3>
             <Collapse in={open}>
-                <div id="testing collapse">
+                <div id="testing collapse" style={{textAlign: "left"}}>
                     {children}
                 </div>
             </Collapse>
@@ -156,7 +156,7 @@ const Synopsis = ({ item, left }) => {
     The content is currently retrieved from content.json, which is populated on build based on raw_content.json. */
 
     return (
-        <p className={left ? "" : "ms-auto"} style={{ paddingInline: "5%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
+        <p className={(left ? "" : "ms-auto ") + "synopsis"} style={{ paddingInline: "5%", width: "65%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
     );
 };
 
