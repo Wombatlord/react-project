@@ -3,8 +3,8 @@ body {
   margin: 20px;
   margin-top: 0px;
   background-color: #262626;
+  overflow-y: scroll;
 }
-
 
 button {
   font: 14px "Oswald", cursive;
@@ -27,7 +27,7 @@ h2 {
 
 p {
   font: 20px "Oswald";
-  width: 65%;
+  /* width: 100%; */
   margin-block-end: 5%;
 }
 
@@ -119,9 +119,19 @@ ul {
   padding-bottom: 8px;
 }
 
-.markdownViewer {
+.projectPageHeader {
   margin-block-end: 5%;
-  animation: fadeIn 15s;
+  animation: fadeIn 6s;
+}
+
+.aboutHeader {
+  margin-block-end: 5%;
+  animation: fadeIn 6s;
+}
+
+.contactHeader {
+  margin-block-end: 5%;
+  animation: fadeIn 6s;
 }
 
 @keyframes animReset {
@@ -161,29 +171,21 @@ ul {
   }
 }
 
-
-@keyframes growBar {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 75%;
-    border-bottom: 3px gold solid;
-  }
-}
-
 div .mdItem {
   margin: 15px;
 }
 
-.mdDescription {
-  opacity: 15%;
+/* .modal-width {
+  max-width: 100%;
+} */
+
+.synopsis {
+  opacity: 85%;
 }
 
 .modal {
   font-family: "Oswald", monospace;
-  background-color: #141414;
+  background-color: #262626;
 }
 
 .modal-dialog {

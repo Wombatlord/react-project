@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MyNavBar from "./Navbar/navbar"
-import content from "./content.json";
+import projectPageContent from "./content.json";
+import aboutPageContent from "./aboutPageContent.json";
 import ProjectPage from "./ProjectPage";
+import AboutPage from "./AboutPage";
+import ContactPage from "./ContactPage"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+// The top level component for the project.
+// New routes should be added here with an appropriate path
+// Any component included specifically here instead of at an endpoint will render on all pages.
+// eg. MyNavBar will currently render above content at all routes.
 function App() {
   return (
     <div className="App">
@@ -15,9 +21,9 @@ function App() {
         <MyNavBar gitLink={"https://github.com/Wombatlord"} />
       </div>
       <Routes>
-        <Route path="/" element={<ProjectPage content={content}/>} />
-        <Route path="/about" element={<p>about placeholder</p>} />
-        <Route path="/contact" element={<p>contact placeholder</p>} />
+        <Route path="/" element={<ProjectPage content={projectPageContent}/>} />
+        <Route path="/about" element={<AboutPage content={aboutPageContent}/>} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
   );
