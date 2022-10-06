@@ -27,7 +27,7 @@ h2 {
 
 p {
   font: 20px "Oswald";
-  width: 65%;
+  /* width: 100%; */
   margin-block-end: 5%;
 }
 
@@ -171,28 +171,16 @@ ul {
   }
 }
 
-
-@keyframes growBar {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 75%;
-    border-bottom: 3px gold solid;
-  }
-}
-
 div .mdItem {
   margin: 15px;
 }
 
-.modal-width {
-  max-width: 65%;
-}
+/* .modal-width {
+  max-width: 100%;
+} */
 
-.mdDescription {
-  opacity: 15%;
+.synopsis {
+  opacity: 85%;
 }
 
 .modal {
