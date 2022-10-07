@@ -39,6 +39,11 @@ p {
   background-color: #212529;
 }
 
+/* Setting minimum height of email submission field on contact form */ 
+textarea.form-control {
+  min-height: calc(10.5em + .75rem + 2px);
+}
+
 /* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
 /* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
 /* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
