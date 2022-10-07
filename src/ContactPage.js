@@ -49,7 +49,8 @@ function ContactForm() {
                     <form onSubmit={submitHandler}>
                         {/* <!-- email --> */}
                         <div class="form-group">
-                            <label for="email" style={{font: "22px Major Mono Display, monospace"}}>Email address</label>
+                            {/* <label for="email" style={{font: "22px Major Mono Display, monospace", paddingBlock: "0.5em"}}>Email address</label> */}
+                            <div style={{minHeight: "50px"}}>
                             <input
                                 type="email"
                                 name="email"
@@ -60,11 +61,13 @@ function ContactForm() {
                                 value={emailField}
                                 style={{color: "gold"}}
                             />
+                            </div>
                         </div>
 
                         {/* <!-- subject --> */}
                         <div class="form-group">
-                            <label for="subject" style={{font: "22px Major Mono Display, monospace"}}>Subject</label>
+                            {/* <label for="subject" style={{font: "22px Major Mono Display, monospace", paddingBlock: "0.5em"}}>Subject</label> */}
+                            <div style={{minHeight: "50px"}}>
                             <input
                                 type="text"
                                 name="subject"
@@ -75,21 +78,24 @@ function ContactForm() {
                                 value={subjectField}
                                 style={{color: "gold"}}
                             />
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email_body" style={{font: "22px Major Mono Display, monospace"}}>Message</label>
+                        <div class="form-group" style={{paddingBlockEnd: "0.5em"}}>
+                            {/* <label for="email_body" style={{font: "22px Major Mono Display, monospace", paddingBlock: "0.5em", paddingInline: "2em"}}>Message</label> */}
                             <textarea
                                 class="form-control"
                                 id="email_body"
                                 rows="5"
                                 onChange={event => setSubmitText(event.target.value)}
+                                onFocus={() => setSubmitText("")}
                                 value={submitText}
                                 style={{color: "gold"}}
+                                shadow="none"
                             ></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" style={{color: "gold", backgroundColor: "#212529", borderColor: "gold"}}>
                             Submit
                         </button>
                     </form>
