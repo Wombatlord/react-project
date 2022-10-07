@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PageBody } from "./util"
 
 // Scaffold for content at /contact endpoint.
@@ -15,25 +16,20 @@ function ContactPage() {
 }
 
 function ContactForm() {
+    let [submitText, setSubmitText] = useState("");
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        setSubmitText("Thanks for messaging!")
+    }
+
     return (
-        <div class="container">
+        <div class="contactContainer">
             <div class="row">
                 <div class="col align-self-center">
-                    <h1 class="text-center">Email - JavaScript Contact Form</h1>
+                    <h1 class="text-center">Email</h1>
                     {/* <!-- contact form --> */}
-                    <form>
-                        {/* <!-- name --> */}
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input
-                                type="name"
-                                name="name"
-                                class="form-control"
-                                id="name"
-                                placeholder="enter your name"
-                            />
-                        </div>
-
+                    <form onSubmit={submitHandler}>
                         {/* <!-- email --> */}
                         <div class="form-group">
                             <label for="email">Email address</label>
@@ -62,8 +58,11 @@ function ContactForm() {
                             <label for="email_body">Message</label>
                             <textarea
                                 class="form-control"
+                                style={{color: "gold"}}
                                 id="email_body"
                                 rows="5"
+                                onChange={event => setSubmitText(event.target.value)}
+                                value={submitText}
                             ></textarea>
                         </div>
 
@@ -76,6 +75,5 @@ function ContactForm() {
         </div>
     );
 }
-
 
 export default ContactPage;

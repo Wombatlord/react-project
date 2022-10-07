@@ -31,6 +31,14 @@ p {
   margin-block-end: 5%;
 }
 
+.form-control {
+  background-color: #212529;
+}
+
+.form-control:focus {
+  background-color: #212529;
+}
+
 /* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
 /* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
 /* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
