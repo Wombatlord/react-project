@@ -181,6 +181,14 @@ div .mdItem {
 
 .synopsis {
   opacity: 85%;
+  border-left: 4px solid;
+  border-top: 4px solid;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 2%;
+  padding-block-end: 2%;
+  /* border-top-color: #888;
+  border-left-color: white; */
 }
 
 .modal {

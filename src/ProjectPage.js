@@ -156,7 +156,7 @@ const Synopsis = ({ item, left }) => {
     The content is currently retrieved from content.json, which is populated on build based on raw_content.json. */
 
     return (
-        <p className={(left ? "" : "ms-auto ") + "synopsis"} style={{ paddingInline: "5%", width: "65%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
+        <p className={(left ? "" : "ms-auto ") + "synopsis"} style={{ paddingInline: "3%", width: "65%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
     );
 };
 
