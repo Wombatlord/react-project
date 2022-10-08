@@ -16,33 +16,34 @@ function ContactPage() {
     )
 }
 
-//https://dev.to/ebereplenty/contact-form-with-emailjs-react-581c
-
 function ContactForm() {
     /*
-    This is the main component which composes the user input fields for a contact form.
-    The submitHandler is attached to the <form> element.
-    It prevents the default browser behaviour which is to refresh the page, this allows
-    us to maintain state after submission. This is used to clear the email & subject fields,
-    and to replace the user supplied message content with a string passed in setSubmitText.
-    */
+    ContactForm provides 3 fields for user input of a sending address, subject, and content.
+    sendEmail() is the handler for onSubmit events, it is attached to the <form> element via the ref prop.
+    The "name" prop in each <input> element corresponds to the dynamic variabls in an emailjs template. 
+    ----
+    These useState hooks allow for replacing user input after submission.
+    They are attached to onChange props within their respective elements. */
     let [emailField, setEmailField] = useState("");
     let [subjectField, setSubjectField] = useState("");
     let [submitText, setSubmitText] = useState("");
-
+    
+    /*
+    useRef hook allows form content to be passed into sendForm for processing by emailjs.
+    It is attached to the form tag in the return statement. */
     const form = useRef();
 
     const sendEmail = (e) => {
-        // This prevents the page refreshing and losing state.
-        // Allows useState hooks to change the user submitted content on submission.
+        /* 
+        This prevents the page refreshing and losing state.
+        Allows useState hooks to change the user submitted content on submission. */
         e.preventDefault();
 
-        // This function is responsible for the actual sending of the form via emailjs.
-        // 
+        // sendForm() is responsible for the actual sending of the form via emailjs.
         sendForm(
             process.env.REACT_APP_SERVICE_ID,  // emailjs service id.
             process.env.REACT_APP_TEMPLATE_ID, // emailjs template id.
-            form.current,  // form content.
+            form.current,  // form content from ref prop via useRef hook.
             process.env.REACT_APP_EMAILJS_PUBLIC_KEY // emailjs public key.
         )
             .then((result) => {
@@ -76,7 +77,7 @@ function ContactForm() {
                                     className="form-control"
                                     id="email"
                                     placeholder="enter your email"
-                                    onChange={event => setEmailField(event.target.value)}
+                                    onChange={e => setEmailField(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
                                     value={emailField}
                                     style={{ color: "gold" }}
                                 />
@@ -93,7 +94,7 @@ function ContactForm() {
                                     className="form-control"
                                     id="subject"
                                     placeholder="enter email subject"
-                                    onChange={event => setSubjectField(event.target.value)}
+                                    onChange={e => setSubjectField(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
                                     value={subjectField}
                                     style={{ color: "gold" }}
                                 />
@@ -107,17 +108,20 @@ function ContactForm() {
                                 className="form-control"
                                 name="jsdev_message"
                                 rows="5"
-                                onChange={event => setSubmitText(event.target.value)}
-                                onFocus={() => setSubmitText("")}
+                                onChange={e => setSubmitText(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
+                                onFocus={() => setSubmitText("")} // Clear content if user refocuses field.
                                 value={submitText}
                                 style={{ color: "gold" }}
                                 shadow="none"
                             ></textarea>
                         </div>
-
-                        <button type="submit" className="btn btn-primary" style={{ color: "gold", backgroundColor: "#212529", borderColor: "gold" }}>
-                            Submit
-                        </button>
+                        <div style={{ textAlign: "center", paddingBlock: "0.5em" }}> {/* button positioning */}
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                                style={{ color: "gold", backgroundColor: "#212529", borderColor: "gold", width: "40%" }} // button styling
+                            >Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
