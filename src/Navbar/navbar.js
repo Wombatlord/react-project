@@ -22,16 +22,15 @@ function MyNavBar(props) {
                         <div className='container'>
                             <Nav.Link href={gitLink}>github/wombatlord</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                <NavDropdown.Item onClick={() => navigate("/")}>
+                                    projects
+                                </NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => navigate("/about")}>
-                                    About
+                                    personal
                                 </NavDropdown.Item>
-                                <NavDropdown.Item onClick={() => navigate("/contact")}>
-                                    Contact
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
+                                <NavDropdown.Item onClick={() => navigate("/contact")}>
+                                    contact
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </div>
