@@ -31,6 +31,27 @@ p {
   margin-block-end: 5%;
 }
 
+.form-control {
+  background-color: #212529;
+}
+
+.form-control:focus {
+  background-color: #212529;
+  border: 1px solid gold;
+  box-shadow: 0 0 5px gold;
+}
+
+.form-control:hover {
+  border: 1px solid gold;  
+  box-shadow: 0 0 5px gold;
+}
+
+/* Setting minimum height of email submission field on contact form */ 
+textarea.form-control {
+  min-height: calc(10.5em + .75rem + 2px);
+}
+
+
 /* LOOK AT THIS LINK WHEN YOU WANNA DO THE BORDER STUFF MORE */
 /* https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border */
 /* Underline-borders currently based on: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
@@ -181,6 +202,14 @@ div .mdItem {
 
 .synopsis {
   opacity: 85%;
+  border-left: 4px solid;
+  border-top: 4px solid;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 2%;
+  padding-block-end: 2%;
+  /* border-top-color: #888;
+  border-left-color: white; */
 }
 
 .modal {
