@@ -8,7 +8,7 @@ function AboutPage({ content }) {
         <div>
             <PageBody>
                 <h1
-                    className={styles.aboutPageHeader}
+                    className={styles.aboutHeader}
                 >About</h1>
                 <RenderText textToRender={content} />
             </PageBody>

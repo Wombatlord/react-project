@@ -1,7 +1,5 @@
 body {
   font: 14px "Major Mono Display", monospace;
-  margin: 20px;
-  margin-top: 0px;
   background-color: #262626;
   overflow-y: scroll;
 }
@@ -21,10 +19,6 @@ div {
   color: white;
 }
 
-.navbar {
-  padding-top: 0px;
-}
-
 .me-auto {
   width: 100%;
 }
@@ -35,17 +29,6 @@ div {
   justify-content: right;
   margin-bottom: 0px;
   padding-bottom: 8px;
-}
-
-
-@keyframes animReset {
-  from {
-    width: 75%;
-  }
-
-  to {
-    width: 75%;
-  }
 }
 
 @keyframes fadeIn {
@@ -62,23 +45,9 @@ div {
   }
 }
 
-@keyframes fadeInMove {
-  from {
-    opacity: 0;
-    left: 0px;
-  }
+/* modal, navbar, dropdown are bootstrap components, refactoring into modules doesn't seem to play nicely, just leave them here. */
 
-  to {
-    opacity: 1;
-    left: 50px;
-    color: gold;
-  }
-}
-
-div .mdItem {
-  margin: 15px;
-}
-
+/* Modal Styling */
 .modal {
   font-family: "Oswald", monospace;
   background-color: #262626;
@@ -94,6 +63,11 @@ div .mdItem {
 
 .modal-footer {
   background-color: #262626;
+}
+
+/* Navbar Styling */
+.navbar {
+  padding-top: 0;
 }
 
 .navbar>.container {
@@ -158,6 +132,7 @@ div .mdItem {
   color: gold;
 }
 
+/* Drop-down styling */
 .dropdown-menu {
   background-color: gold;
 }
@@ -175,40 +150,3 @@ div .mdItem {
   color: white;
   background-color: gold;
 }
-
-ul {
-  list-style: none !important;
-}
-
-/*.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  width: 500px;
-  background: #ccc;
-}
-
-.modal-header .modal-footer {
-  padding: 10px;
-}
-
-.modal-title {
-	text-align: center;
-	font-weight: bold;
-	font-size: 20px;
-	margin: 0;
-	padding: 10px;
-}
-
-.modal-body {
-  padding: 10px;
-}*/

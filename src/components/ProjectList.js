@@ -17,7 +17,7 @@ export function ProjectList({ items, clickHandlers }) {
 
     // returns a mapping of items to columns with attached content, clickHandler, and value for left prop.
     return (
-        <Container className="mdItem">
+        <Container className={styles.projectListContainer}>
             <Col>{items.map(renderListEntry)}</Col>
         </Container>
     );
