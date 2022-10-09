@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { PageBody } from "./util";
+import { PageBody } from "../components/PageBody";
 import { sendForm } from "emailjs-com";
 
 // Scaffold for content at /contact endpoint.

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Collapse, Container, Row, Col, Stack } from "react-bootstrap";
-import Modal from "./Modal/Modal";
-import { PageBody } from "./util"
-import { RenderedMarkdown } from "./converter";
-import { getPost } from "./Posts"
+import Modal from "../components/Modal";
+import { PageBody } from "../components/PageBody"
+import { RenderedMarkdown } from "../components/RenderedMarkdown";
+import { getPost } from "../utils/Posts"
 
 // defaultItem is the state of a trvial item with no content.
 // Ensures the useState hook has a default empty state to populate when calling setItem.

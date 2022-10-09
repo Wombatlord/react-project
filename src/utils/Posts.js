@@ -1,4 +1,4 @@
-import rawContent from "./assets/raw_content.json"
+import rawContent from "../assets/raw_content.json"
 
 // getPost pulls the post content from the raw_content.json by the post id.
 export const getPost = (postId) => {

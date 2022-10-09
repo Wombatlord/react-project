@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import MyNavBar from "./Navbar/navbar"
+import MyNavBar from "./components/Navbar"
 import projectPageContent from "./content.json";
 import aboutPageContent from "./aboutPageContent.json";
-import ProjectPage from "./ProjectPage";
-import AboutPage from "./AboutPage";
-import ContactPage from "./ContactPage"
+import ProjectPage from "./pages/ProjectPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

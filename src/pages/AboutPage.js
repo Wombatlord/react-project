@@ -1,4 +1,4 @@
-import { PageBody } from "./util";
+import { PageBody } from "../components/PageBody";
 
 // Scaffold for content at /about endpoint.
 function AboutPage({ content }) {
