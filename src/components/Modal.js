@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import BSModal from "react-bootstrap/Modal";
 
-function Modal(props) {
+export function Modal(props) {
   const { show, setShow, children, heading } = props;
 
   const handleClose = () => setShow(false);
@@ -21,5 +21,3 @@ function Modal(props) {
     </BSModal>
   );
 }
-
-export default Modal;

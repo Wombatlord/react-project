@@ -1,0 +1,8 @@
+.modal {
+    font-family: "Oswald", monospace;
+    background-color: #262626;
+}
+
+.modal-dialog {
+    border-radius: var(--bs-modal-border-radius);
+}
