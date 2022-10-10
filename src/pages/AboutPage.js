@@ -1,5 +1,6 @@
 import { PageBody } from "../components/PageBody";
-import { RenderText } from "../components/RenderText"
+import { RenderedMarkdown } from "../components/RenderedMarkdown";
+// import { RenderText } from "../components/RenderText"
 import styles from "../styles/headers.module.css"
 
 // Scaffold for content at /about endpoint.
@@ -10,7 +11,7 @@ function AboutPage({ content }) {
                 <h1
                     className={styles.aboutHeader}
                 >About</h1>
-                <RenderText textToRender={content} />
+                <RenderedMarkdown Markdown={content} />
             </PageBody>
         </div>
     );
