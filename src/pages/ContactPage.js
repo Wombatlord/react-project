@@ -1,6 +1,12 @@
 import { useState, useRef } from "react";
-import { PageBody } from "./util";
+import { PageBody } from "../components/PageBody";
 import { sendForm } from "emailjs-com";
+// import styles from "../styles/contact.module.css";
+
+import contactStyle from "../styles/contact.module.css"
+import headerStyle from "../styles/headers.module.css"
+let styles = {}
+Object.assign(styles, contactStyle, headerStyle)
 
 // Scaffold for content at /contact endpoint.
 function ContactPage() {
@@ -8,7 +14,7 @@ function ContactPage() {
         <div>
             <PageBody>
                 <h1
-                    className="contactHeader"
+                    className={headerStyle.contactHeader}
                 >Contact</h1>
                 <ContactForm />
             </PageBody>
@@ -74,7 +80,7 @@ function ContactForm() {
                                 <input
                                     type="email"
                                     name="jsdev_email"
-                                    className="form-control"
+                                    className={contactStyle.formcontrol}
                                     id="email"
                                     placeholder="enter your email"
                                     onChange={e => setEmailField(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
@@ -91,7 +97,7 @@ function ContactForm() {
                                 <input
                                     type="text"
                                     name="jsdev_subject"
-                                    className="form-control"
+                                    className={contactStyle.formcontrol}
                                     id="subject"
                                     placeholder="enter email subject"
                                     onChange={e => setSubjectField(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
@@ -105,13 +111,13 @@ function ContactForm() {
                         <div className="form-group" style={{ paddingBlockEnd: "0.5em" }}>
                             {/* <label for="email_body" style={{font: "22px Major Mono Display, monospace", paddingBlock: "0.5em", paddingInline: "2em"}}>Message</label> */}
                             <textarea
-                                className="form-control"
+                                className={contactStyle.formcontrol}
                                 name="jsdev_message"
                                 rows="5"
                                 onChange={e => setSubmitText(e.target.value)} // e.preventDefault in onSubmit handler allows field to be modified after submission.
                                 onFocus={() => setSubmitText("")} // Clear content if user refocuses field.
                                 value={submitText}
-                                style={{ color: "gold" }}
+                                style={{color: "gold"}}
                                 shadow="none"
                             ></textarea>
                         </div>

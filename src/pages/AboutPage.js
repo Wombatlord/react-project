@@ -1,4 +1,6 @@
-import { PageBody } from "./util";
+import { PageBody } from "../components/PageBody";
+import { RenderText } from "../components/RenderText"
+import styles from "../styles/headers.module.css"
 
 // Scaffold for content at /about endpoint.
 function AboutPage({ content }) {
@@ -6,18 +8,12 @@ function AboutPage({ content }) {
         <div>
             <PageBody>
                 <h1
-                    className="aboutHeader"
+                    className={styles.aboutHeader}
                 >About</h1>
                 <RenderText textToRender={content} />
             </PageBody>
         </div>
     );
-}
-
-function RenderText({ textToRender }) {
-    const getText = (item) => (item.aboutContent);
-
-    return (<p style={{ paddingLeft: "5%", width: "80%" }}>{textToRender.map(getText)}</p>);
 }
 
 export default AboutPage;

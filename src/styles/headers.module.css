@@ -1,0 +1,28 @@
+.projectPageHeader {
+    margin-block-end: 5%;
+    animation: fadeIn 6s;
+}
+
+.aboutHeader {
+    margin-block-end: 5%;
+    animation: fadeIn 6s;
+}
+
+.contactHeader {
+    margin-block-end: 5%;
+    animation: fadeIn 6s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    8% {
+      opacity: 0.3%
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
