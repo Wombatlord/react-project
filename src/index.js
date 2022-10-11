@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import MyNavBar from "./components/Navbar"
 import projectPageContent from "./content.json";
-import aboutPageContent from "./aboutPageContent.json";
+import aboutPageContent from "./assets/about_content.json";
 import ProjectPage from "./pages/ProjectPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage"
