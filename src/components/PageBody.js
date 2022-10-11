@@ -2,5 +2,5 @@
 // see AboutPage.js & ProjectPage.js for in use example.
 
 export function PageBody({ children }) {
-    return (<div className="mx-auto" style={{ width: "65%" }}>{children}</div >);
+    return (<div className="mx-auto" style={{ width: "65%", paddingTop: "40px" }}>{children}</div >);
 }

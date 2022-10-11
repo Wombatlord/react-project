@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useNavigate } from "react-router-dom";
 
+
 // https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/ look at this for an alternate mobile component for navbar.
 
 function MyNavBar(props) {
@@ -11,7 +12,7 @@ function MyNavBar(props) {
     const navigate = useNavigate();
 
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" fixed="top">
             <Container>
                 <Link to="/" className='brand-link'>
                     <Navbar.Brand>://JStone_Dev</Navbar.Brand>

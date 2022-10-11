@@ -2,6 +2,7 @@ body {
   font: 14px "Major Mono Display", monospace;
   background-color: #262626;
   overflow-y: scroll;
+  padding-top: 100px;
 }
 
 button {
@@ -68,13 +69,16 @@ div {
 /* Navbar Styling */
 .navbar {
   padding-top: 0;
+  /* border-bottom: 5px solid; */
 }
 
 .navbar>.container {
+  border-bottom: 5px solid;
   max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
-  padding: 25px;
+  min-height: 100px;
+  /* margin-left: 100px; */
+  /* margin-right: 100px; */
+  /* padding: 25px; */
 }
 
 .navbar-brand {
@@ -85,6 +89,18 @@ div {
 .brand-link {
   text-decoration: transparent;
 }
+
+@media (max-width: 700px) {
+  .navbar-brand {
+    font-size: 35px;
+  }
+  
+  .brand-link {
+    margin-bottom: 15px;
+  }
+}
+
+
 
 .navbar-brand:hover {
   color: gold;
