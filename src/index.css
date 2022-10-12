@@ -72,8 +72,22 @@ div {
   /* border-bottom: 5px solid; */
 }
 
+.animatedBrandContainer {
+  width: 100%;
+}
+
+/* Navbar background colouring */
+/* a comma means apply the style to all elements */
+.animatedBrandContainer,
+.nav-item.dropdown,
+.navbar>.container,
+.me-auto>div:nth-child(1) {
+  background-color: #1a1a1a;
+}
+
 .navbar>.container {
-  border-bottom: 5px solid;
+  border-bottom: 8px solid;
+  border-color: #888;
   max-width: 100%;
   min-height: 100px;
   /* margin-left: 100px; */
@@ -82,7 +96,7 @@ div {
 }
 
 .navbar-brand {
-  color: white;
+  color: silver;
   font-size: 40px;
 }
 
@@ -94,13 +108,11 @@ div {
   .navbar-brand {
     font-size: 35px;
   }
-  
+
   .brand-link {
     margin-bottom: 15px;
   }
 }
-
-
 
 .navbar-brand:hover {
   color: gold;
@@ -127,7 +139,7 @@ div {
   margin-right: 25px;
   margin-left: 25px;
   padding: 8px;
-  border: 2px solid white;
+  border: 2px solid gold;
   /* animation: borderFade 8s; */
   border-radius: 25px;
 }

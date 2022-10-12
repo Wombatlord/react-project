@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Row, Col, Stack, Container } from "react-bootstrap";
 import styles from "../styles/projectList.module.css"
 
@@ -30,25 +31,40 @@ export const MarkdownItem = ({ item, clickHandler, left }) => {
     Attaches the clickHandler passed as a prop from ProjectPage component to the h2 elements.
     The left prop from renderListEntry determines which class name is assigned for styling & layout purposes. */
 
+    const [animate, setAnimate] = useState(false)
+
     return (
         <Stack gap={4}>
             <Stack direction="horizontal">
-                <h2 className={(left ? "" : "ms-auto ") + (left ? styles.projectTitleLeft : styles.projectTitleRight)} onClick={clickHandler}>{item.name}</h2>
+                <h2
+                    className={(left ? "" : "ms-auto ") + (left ? styles.projectTitleLeft : styles.projectTitleRight)}
+                    onClick={clickHandler}
+                    onMouseEnter={() => setAnimate(true)}
+                    onMouseLeave={() => setAnimate(false)}
+                > {console.log(animate)}
+                    {item.name}
+                </h2>
             </Stack>
             <Stack direction="horizontal" gap={4}>
-                <Synopsis item={item} left={left} />
+                <Synopsis item={item} left={left} animated={animate} />
             </Stack>
         </Stack>
     );
 };
 
-export const Synopsis = ({ item, left }) => {
+export const Synopsis = ({ item, left, animated }) => {
     /* Short project descriptions for display under the clickable project headings.
     inline Style element provides a 5% offset from the edges of the PageBody component.
     Descriptions are a field on the item prop, passed down from the content prop on a route in index.js.
     The content is currently retrieved from content.json, which is populated on build based on raw_content.json. */
 
     return (
-        <p className={(left ? "" : "ms-auto ") + (styles.synopsis)} style={{ paddingInline: "3%", width: "65%" }}>{item.description ? item.description : "No Description More Text More Text More Text"}</p>
+        <p
+            
+            className={(left ? "" : "ms-auto ") + (animated ? styles.animateSynopsis : styles.synopsis)}
+            style={{ paddingInline: "3%", width: "65%" }}
+        >
+            {item.description ? item.description : "No Description More Text More Text More Text"}
+        </p>
     );
 };
