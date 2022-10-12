@@ -2,6 +2,7 @@ body {
   font: 14px "Major Mono Display", monospace;
   background-color: #262626;
   overflow-y: scroll;
+  padding-top: 100px;
 }
 
 button {
@@ -68,22 +69,49 @@ div {
 /* Navbar Styling */
 .navbar {
   padding-top: 0;
+  /* border-bottom: 5px solid; */
+}
+
+.animatedBrandContainer {
+  width: 100%;
+}
+
+/* Navbar background colouring */
+/* a comma means apply the style to all elements */
+.animatedBrandContainer,
+.nav-item.dropdown,
+.navbar>.container,
+.me-auto>div:nth-child(1) {
+  background-color: #1a1a1a;
 }
 
 .navbar>.container {
+  border-bottom: 8px solid;
+  border-color: #888;
   max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
-  padding: 25px;
+  min-height: 100px;
+  /* margin-left: 100px; */
+  /* margin-right: 100px; */
+  /* padding: 25px; */
 }
 
 .navbar-brand {
-  color: white;
+  color: silver;
   font-size: 40px;
 }
 
 .brand-link {
   text-decoration: transparent;
+}
+
+@media (max-width: 700px) {
+  .navbar-brand {
+    font-size: 35px;
+  }
+
+  .brand-link {
+    margin-bottom: 15px;
+  }
 }
 
 .navbar-brand:hover {
@@ -111,7 +139,7 @@ div {
   margin-right: 25px;
   margin-left: 25px;
   padding: 8px;
-  border: 2px solid white;
+  border: 2px solid gold;
   /* animation: borderFade 8s; */
   border-radius: 25px;
 }

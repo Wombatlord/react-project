@@ -21,12 +21,13 @@ p {
   position: relative;
   animation: fadeIn 10s;
   min-height: 75px;
+  transition: font 0s;
 }
 
 .projectTitleLeft:hover {
   font: 45px "Oswald";
   color: gold;
-  animation: animReset 2s forwards;
+  transition: font 1s;
 }
 
 .projectTitleLeft::before {
@@ -44,7 +45,7 @@ p {
 }
 
 .projectTitleLeft:hover::before {
-  transform: scaleX(75%);
+  transform: scaleX(100%);
 }
 
 .projectTitleRight {
@@ -58,7 +59,6 @@ p {
 .projectTitleRight:hover {
   font: 45px "Oswald";
   color: gold;
-  animation: animReset 2s forwards;
 }
 
 .projectTitleRight::before {
@@ -76,19 +76,30 @@ p {
 }
 
 .projectTitleRight:hover::before {
-  transform: scaleX(75%);
+  transform: scaleX(100%);
 }
 
 .synopsis {
-  opacity: 85%;
-  border-left: 4px solid;
-  border-top: 4px solid;
+  opacity: 2%;
+  border-left: 4px solid transparent;
+  border-top: 4px solid transparent;
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
   padding-top: 2%;
   padding-block-end: 2%;
-  /* border-top-color: #888;
-  border-left-color: white; */
+}
+
+.animateSynopsis {
+  opacity: 95%;
+  border-left: 4px solid;
+  border-top: 4px solid;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-color: white;
+  color: gold;
+  padding-top: 2%;
+  padding-block-end: 2%;
+  transition: opacity 2s;
 }
 
 @keyframes animReset {
@@ -104,10 +115,6 @@ p {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-  }
-
-  8% {
-    opacity: 0.3%
   }
 
   100% {

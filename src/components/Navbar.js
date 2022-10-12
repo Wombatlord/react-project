@@ -3,19 +3,46 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useNavigate } from "react-router-dom";
+import { TypeAnimation } from 'react-type-animation';
 
 // https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/ look at this for an alternate mobile component for navbar.
+
+const AnimatedBrand = () => {
+    return (
+        <TypeAnimation
+            sequence={[
+                '://JS', // Types 'One'
+                1000, // Waits 1s
+                ':/', // Deletes '/JS'
+                500, // Waits 0.5s
+                '://JStone_Dev', // Types the full string without deleting previous characters.
+                () => {
+                    console.log("Done Typing!"); // Place optional callbacks anywhere in the array
+                }
+            ]}
+            wrapper="Navbar.Brand"
+            cursor={false}
+            repeat={"2s"}
+            speed={20}
+            style={{ fontSize: '2em' }}
+        />
+    );
+};
 
 function MyNavBar(props) {
     const { gitLink } = props;
     const navigate = useNavigate();
 
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" fixed="top">
             <Container>
-                <Link to="/" className='brand-link'>
-                    <Navbar.Brand>://JStone_Dev</Navbar.Brand>
-                </Link>
+                <div className="animatedBrandContainer">
+                    <Link to="/" className='brand-link'>
+                        <Navbar.Brand>
+                            <AnimatedBrand />
+                        </Navbar.Brand>
+                    </Link>
+                </div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

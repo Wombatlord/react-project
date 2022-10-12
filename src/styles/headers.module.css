@@ -1,28 +1,25 @@
-.projectPageHeader {
-    margin-block-end: 5%;
-    animation: fadeIn 6s;
-}
-
-.aboutHeader {
-    margin-block-end: 5%;
-    animation: fadeIn 6s;
+.projectPageHeader,
+.aboutHeader,
+.contactHeader {
+  font-size: 14.5rem;
+  margin-block-end: 5%;
+  animation: fadeIn 6s;
 }
 
 .contactHeader {
-    margin-block-end: 5%;
-    animation: fadeIn 6s;
+  text-align: center;
 }
 
 @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-  
-    8% {
-      opacity: 0.3%
-    }
-  
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
+
+  8% {
+    opacity: 0.3%
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
