@@ -21,13 +21,13 @@ p {
   position: relative;
   animation: fadeIn 10s;
   min-height: 75px;
-  transition: font 0s;
+  /* transition: font 0s; */
 }
 
 .projectTitleLeft:hover {
   font: 45px "Oswald";
   color: gold;
-  transition: font 1s;
+  /* transition: font 1s; */
 }
 
 .projectTitleLeft::before {
@@ -80,13 +80,14 @@ p {
 }
 
 .synopsis {
-  opacity: 2%;
+  opacity: 15%;
   border-left: 4px solid transparent;
   border-top: 4px solid transparent;
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
   padding-top: 2%;
   padding-block-end: 2%;
+  transition: border 0.75s, opacity 2s;
 }
 
 .animateSynopsis {
@@ -99,7 +100,7 @@ p {
   color: gold;
   padding-top: 2%;
   padding-block-end: 2%;
-  transition: opacity 2s;
+  transition: border 1s, opacity 2s, color 2s;
 }
 
 @keyframes animReset {

@@ -20,7 +20,7 @@ const AnimatedBrand = () => {
                     console.log("Done Typing!"); // Place optional callbacks anywhere in the array
                 }
             ]}
-            wrapper="Navbar.Brand"
+            wrapper="navbar-brand"
             cursor={false}
             repeat={"2s"}
             speed={20}
