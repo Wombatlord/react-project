@@ -6,10 +6,10 @@ function Collapsible({ children, title }) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div onClick={() => setOpen(!open)} >
-            <h3 style={{paddingLeft: "0"}}>{title ? title : "No Title."}</h3>
+        <div>
+            <h3 onClick={() => setOpen(!open)} style={{paddingLeft: "0"}}>{title ? title : "No Title."}</h3>
             <Collapse in={open}>
-                <div id="testing collapse" >
+                <div id="testing collapse" style={{textAlign: "left"}}>
                     {children}
                 </div>
             </Collapse>
