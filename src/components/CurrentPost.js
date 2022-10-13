@@ -1,14 +1,14 @@
 import { RenderedMarkdown } from "./RenderedMarkdown"
 import { PostSection } from "./Collapsible"
 import { Modal } from "./Modal"
-import { Gallery } from "./Gallery"
+import { ControlledCarousel } from "./Gallery"
 
 // This allows various ways to present the content of a post section depending on the attached syntax field.
 // Attach components to fields here to extend the available rendering components which wrap different content formats. 
 const renderFuncs = {
     default: (inner) => inner,
     markdown: (inner) => <RenderedMarkdown Markdown={inner}></RenderedMarkdown>,
-    image: (inner) => <Gallery imgs={inner} imgIdx={0}/>
+    image: (inner) => <ControlledCarousel imgs={inner}/>
 }
 
 export function CurrentPost(props) {
