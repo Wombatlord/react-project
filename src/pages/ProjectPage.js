@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { ProjectList } from "../components/ProjectList";
 import { CurrentPost } from "../components/CurrentPost";
-import { PageBody } from "../components/PageBody"
-import { getPost } from "../utils/Posts"
-import headerStyle from "../styles/headers.module.css"
+import { PageBody } from "../components/PageBody";
+import { getPost } from "../utils/Posts";
+import useFitText from "use-fit-text";
+import headerStyle from "../styles/headers.module.css";
 
+// function Example() {
+
+//     return (
+//         <div ref={ref} style={{ fontSize, height: 40, width: 100 }}>
+//         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+//       </div>
+//     );
+// }
 
 // defaultItem is the state of a trvial item with no content.
 // Ensures the useState hook has a default empty state to populate when calling setItem.
@@ -29,6 +38,15 @@ function ProjectPage({ content }) {
         setShow(true);
     }
 
+    const onStart = useCallback(() => {
+        console.log("Example 3 resizing started");
+    }, []);
+    const onFinish = useCallback((fontSize) => {
+        console.log("Example 3 resizing finished", fontSize);
+    }, []);
+    const { fontSize, ref } = useFitText({ maxFontSize: 100, onStart, onFinish });
+
+
     // Returns jsx which is evaluated by React into renderable HTML for the browser.
     return (
         <div>
@@ -36,7 +54,13 @@ function ProjectPage({ content }) {
             <PageBody>
                 <h1
                     className={headerStyle.projectPageHeader}
-                >Projects</h1>
+                >
+                    <div ref={ref}
+                        style={{ fontSize, width: "100%" }}
+                    >
+                        Projects
+                    </div>
+                </h1>
                 <ProjectList
                     items={content}
                     clickHandlers={handlers}
