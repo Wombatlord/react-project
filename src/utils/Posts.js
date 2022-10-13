@@ -2,24 +2,41 @@ import rawContent from "../assets/raw_content.json"
 
 // getPost pulls the post content from the raw_content.json by the post id.
 export const getPost = (postId) => {
-    // Here we can access assets/raw_content.json to inject the item sections into the project page as a prop  
-  
-    const modalProps = {
-        heading: rawContent[postId].name,
-        sections: [
-          {
-            heading: "Readme.md",
-            syntax: "markdown",
-            content: rawContent[postId].raw,
-          },
-          {
-            heading: "Gallery",
-            syntax: "image",
-            content: rawContent[postId].img,
-          }
-        ],
-      }
-    
-    console.log("modalProps", modalProps)
-    return modalProps
+  // Here we can access assets/raw_content.json to inject the item sections into the project page as a prop  
+
+  const modalPropsNoGallery = {
+    heading: rawContent[postId].name,
+    sections: [
+      {
+        heading: "Readme.md",
+        syntax: "markdown",
+        content: rawContent[postId].raw,
+      },
+    ],
   }
+
+  const modalPropsWithGallery = {
+    heading: rawContent[postId].name,
+    sections: [
+      {
+        heading: "Readme.md",
+        syntax: "markdown",
+        content: rawContent[postId].raw,
+      },
+      {
+        heading: "Gallery",
+        syntax: "image",
+        content: rawContent[postId].imgs,
+      }
+    ],
+  }
+
+
+  console.log("modalProps", modalPropsWithGallery)
+
+  if (rawContent[postId].imgs.length > 0) {
+    return modalPropsWithGallery
+  } else {
+    return modalPropsNoGallery
+  }
+}

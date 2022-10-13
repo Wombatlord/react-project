@@ -9,7 +9,7 @@ function Collapsible({ children, title }) {
         <div onClick={() => setOpen(!open)} >
             <h3 style={{paddingLeft: "0"}}>{title ? title : "No Title."}</h3>
             <Collapse in={open}>
-                <div id="testing collapse" style={{textAlign: "left"}}>
+                <div id="testing collapse" >
                     {children}
                 </div>
             </Collapse>
