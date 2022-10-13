@@ -3,7 +3,8 @@
         "name": "JStoneDEV",
         "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
         "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md",
-        "raw": "# React Sandbox\n\nAdd markdown pages as the URL to a raw markdown by adding a name and src to `src/content.json`\nTo bundle the pages referenced in `src/content.json` run:\n```\nnpm build\n```\n__Warning: requires python3 with requests installed__\n\nThe rest is a default create-react-app project.\n\n"
+        "raw": "# React Sandbox\n\nAdd markdown pages as the URL to a raw markdown by adding a name and src to `src/content.json`\nTo bundle the pages referenced in `src/content.json` run:\n```\nnpm build\n```\n__Warning: requires python3 with requests installed__\n\nThe rest is a default create-react-app project.\n\n",
+        "img": ["https://media.geeksforgeeks.org/wp-content/uploads/20210425000233/test-300x297.png"]
     },
     {
         "name": "Photerm",

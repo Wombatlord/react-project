@@ -13,9 +13,9 @@ export const getPost = (postId) => {
             content: rawContent[postId].raw,
           },
           {
-            heading: "other",
-            syntax: "default",
-            content: "text"
+            heading: "Gallery",
+            syntax: "image",
+            content: rawContent[postId].img,
           }
         ],
       }
