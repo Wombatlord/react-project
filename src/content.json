@@ -3,7 +3,12 @@
     "name": "JStoneDEV",
     "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
     "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md",
-    "imgs": ["https://media.geeksforgeeks.org/wp-content/uploads/20210425000233/test-300x297.png"]
+    "imgs": [
+      "https://img.posterlounge.co.uk/images/l/1903677.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Formel12021-SchlossGabelhofen%2815%29_%28cropped%29.jpg/1200px-Formel12021-SchlossGabelhofen%2815%29_%28cropped%29.jpg",
+      "https://pbs.twimg.com/media/FZA0egHWYAYfZhj?format=jpg&name=large",
+      "https://img.redbull.com/images/c_crop,x_144,y_0,h_2924,w_2193/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2021/12/16/fw9gbkeymrd6owwo6lke/max-verstappen-abu-dhabi-grand-prix-2021"
+    ]
   },
   {
     "name": "Photerm",
