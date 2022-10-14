@@ -26,7 +26,7 @@ export const getPost = (postId) => {
       {
         heading: "Gallery",
         syntax: "image",
-        content: rawContent[postId].imgs,
+        content: rawContent[postId].images,
       }
     ],
   }
@@ -34,9 +34,5 @@ export const getPost = (postId) => {
 
   console.log("modalProps", modalPropsWithGallery)
 
-  if (rawContent[postId].imgs.length > 0) {
-    return modalPropsWithGallery
-  } else {
-    return modalPropsNoGallery
-  }
+  return (rawContent[postId].images.length ? modalPropsWithGallery : modalPropsNoGallery)
 }

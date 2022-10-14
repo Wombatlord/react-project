@@ -1,28 +1,24 @@
 import Image from 'react-bootstrap/Image';
 import Carousel from 'react-bootstrap/Carousel';
 
-// Essentially just a wrapper around a bootstrap image component, but more complex behaviour can be implemented here.
-export function Gallery({ imgs, imgIdx }) {
-    return (<div style={{ textAlign: "center" }}><Image src={imgs[imgIdx]} rounded></Image></div>)
-}
-
 // Dynamically sized carousels 
 export function ControlledCarousel(props) {
 
-    // TODO: Pass props containing labels & captions
-
-    const prepareSlides = (imgs) => {
+    const prepareSlides = ({ source, caption, title }, index) => {
+        // Decompose the images object array,
+        // Pass & interpolate props to compose an image with corresponding title & caption
         return (
-            <Carousel.Item style={{ minHeight: "45rem" }}>
+            <Carousel.Item>
                 <Image
                     className="d-block w-100"
-                    src={imgs}
+                    src={source}
                     alt="First slide"
                     rounded
+                    fluid
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>{title}</h3>
+                    <p>{caption}</p>
                 </Carousel.Caption>
             </Carousel.Item>
         )
@@ -30,7 +26,7 @@ export function ControlledCarousel(props) {
 
     return (
         <Carousel >
-            {props.imgs.map(prepareSlides)}
+            {props.images.map(prepareSlides)}
         </Carousel>
     );
 }
