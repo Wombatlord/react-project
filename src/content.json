@@ -3,24 +3,29 @@
     "name": "JStoneDEV",
     "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
     "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md",
-    "images": [
-      {
-        "source": "https://img.posterlounge.co.uk/images/l/1903677.jpg",
-        "title": "A",
-        "caption": "A"
-      },
-      {
-        "source": "https://pbs.twimg.com/media/FZA0egHWYAYfZhj?format=jpg&name=large",
-        "title": "B",
-        "caption": "B"
-      }
-    ]
+    "images": []
   },
   {
     "name": "Photerm",
     "description": "An image and video renderer for the terminal. Fun and experimentation is the guiding principle for Photerm. There's a certain inefficiency to this project, but if you ever wanted to send an image as a text file filled with control characters, this is one way to do it!",
     "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1",
-    "images": []
+    "images": [
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030922578568695868/unknown.png",
+        "title": "Midsommar",
+        "caption": "A frame from the film Midsommar rendered in the terminal with 'mmiiddssOOMMaarr' as the character palette."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030903373643391126/unknown.png",
+        "title": "Son of Man, Magritte.",
+        "caption": "A painting by Magritte, rendered with the letters of his name."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1031273125029089360/unknown.png",
+        "title": "Akira poster",
+        "caption": "Cinematic poster for the film Akira, with full color cells for a 'de-rezzed' effect."
+      }
+    ]
   },
   {
     "name": "Last Player On The Left",
