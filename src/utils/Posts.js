@@ -25,6 +25,7 @@ export const getPost = (postId) => {
       },
       {
         heading: "Gallery",
+        // note: "Images are scaled, to see unscaled please right click > open image.",
         syntax: "image",
         content: rawContent[postId].images,
       }

@@ -8,13 +8,15 @@ export function ControlledCarousel(props) {
         // Decompose the images object array,
         // Pass & interpolate props to compose an image with corresponding title & caption
         return (
-            <Carousel.Item>
+            <Carousel.Item
+                key={index}>
                 <Image
-                    className="d-block w-100"
+                    className="img-responsive w-100"
                     src={source}
                     alt="First slide"
                     rounded
                     fluid
+                    style={{ maxHeight: "37vw", maxWidth: "100vw", }}
                 />
                 <Carousel.Caption>
                     <h3>{title}</h3>
@@ -25,8 +27,11 @@ export function ControlledCarousel(props) {
     }
 
     return (
-        <Carousel >
-            {props.images.map(prepareSlides)}
-        </Carousel>
+        <div>
+            <p style={{ fontSize: "1em" }}>To see original unscaled images, please use right click, open image.</p>
+            <Carousel interval={null}>
+                {props.images.map(prepareSlides)}
+            </Carousel>
+        </div>
     );
 }

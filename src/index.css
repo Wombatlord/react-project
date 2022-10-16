@@ -54,6 +54,10 @@ div {
   background-color: #1a1a1a;
 }
 
+.modal-width {
+  max-width: 50vw;
+}
+
 .modal-dialog {
   border-radius: var(--bs-modal-border-radius);
 }
