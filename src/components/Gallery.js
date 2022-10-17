@@ -11,13 +11,13 @@ export function ControlledCarousel(props) {
             <Carousel.Item
                 key={index}>
                 <Image
-                    className="d-block w-100"
+                    className="d-block w-100 myImages"
                     src={source}
                     alt={index + " : " + title}
                     rounded
                     fluid
                     // Styling here scales the image to within the bounds of the modal to prevent overflow & scrolling.
-                    style={{ maxHeight: "37vw", maxWidth: "100vw"}}
+                    // style={{ maxHeight: "37vw", maxWidth: "100vw"}}
                 />
                 <Carousel.Caption style={{borderRadius:"25px"}}>
                     <h3>{title}</h3>
