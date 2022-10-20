@@ -6,6 +6,7 @@
   animation: fadeIn 6s;
 }
 
+.projectPageHeader,
 .contactHeader {
   text-align: center;
 }
@@ -13,10 +14,6 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-  }
-
-  8% {
-    opacity: 0.3%
   }
 
   100% {

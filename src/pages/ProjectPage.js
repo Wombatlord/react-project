@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { ProjectList } from "../components/ProjectList";
 import { CurrentPost } from "../components/CurrentPost";
-import { PageBody } from "../components/PageBody"
-import { getPost } from "../utils/Posts"
-import headerStyle from "../styles/headers.module.css"
-
+import { PageBody } from "../components/PageBody";
+import { getPost } from "../utils/Posts";
+import useFitText from "use-fit-text";
+import headerStyle from "../styles/headers.module.css";
 
 // defaultItem is the state of a trvial item with no content.
 // Ensures the useState hook has a default empty state to populate when calling setItem.
@@ -29,6 +29,9 @@ function ProjectPage({ content }) {
         setShow(true);
     }
 
+    // Scale text to always fit in window, specifically attached to a div wrapping the Projects header.
+    const { fontSize, ref } = useFitText({ maxFontSize: 100 });
+
     // Returns jsx which is evaluated by React into renderable HTML for the browser.
     return (
         <div>
@@ -36,7 +39,13 @@ function ProjectPage({ content }) {
             <PageBody>
                 <h1
                     className={headerStyle.projectPageHeader}
-                >Projects</h1>
+                >
+                    <div ref={ref}
+                        style={{ fontSize, width: "100%" }}
+                    >
+                        Projects
+                    </div>
+                </h1>
                 <ProjectList
                     items={content}
                     clickHandlers={handlers}

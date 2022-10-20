@@ -3,24 +3,44 @@
         "name": "JStoneDEV",
         "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
         "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md",
+        "images": [],
         "raw": "# React Sandbox\n\nAdd markdown pages as the URL to a raw markdown by adding a name and src to `src/content.json`\nTo bundle the pages referenced in `src/content.json` run:\n```\nnpm build\n```\n__Warning: requires python3 with requests installed__\n\nThe rest is a default create-react-app project.\n\n"
     },
     {
         "name": "Photerm",
         "description": "An image and video renderer for the terminal. Fun and experimentation is the guiding principle for Photerm. There's a certain inefficiency to this project, but if you ever wanted to send an image as a text file filled with control characters, this is one way to do it!",
         "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1",
+        "images": [
+            {
+                "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030922578568695868/unknown.png",
+                "title": "Midsommar",
+                "caption": "A frame from the film Midsommar rendered in the terminal with 'mmiiddssOOMMaarr' as the character palette."
+            },
+            {
+                "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030903373643391126/unknown.png",
+                "title": "Son of Man, Magritte.",
+                "caption": "A painting by Magritte, rendered with the letters of his name."
+            },
+            {
+                "source": "https://cdn.discordapp.com/attachments/907003057164910643/1031273125029089360/unknown.png",
+                "title": "Akira poster",
+                "caption": "Cinematic poster for the film Akira, with full color cells for a 'de-rezzed' effect."
+            }
+        ],
         "raw": "<!-- markdownlint-disable MD004 MD033 MD034 -->\n\n<div align=\"center\">\n\n# Photerm\n\n</div>\n<p align=\"center\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/license/Wombatlord/Photerm?logo=Github&logoColor=green\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/go-mod/go-version/Wombatlord/photerm?logo=go\"></p>\n\n## Introduction\nPhoterm is a command line interface tool for interacting with images from within the terminal. \n\n## Features\n- Render images in the terminal.\n- Load & render a sequence of images.\n- Rescale images.\n- Rotate the hue across images.\n- Render images with different character sets.\n\n## Installation\nTo use Photerm, clone the repo and run `go run main.go` in the project root, along with the path to an image you wish to render.\n\n## Usage\nPhoterm has various CLI arguments for altering the output.\n\nTo save the output, simply redirect it to a txt file. The image can then be rerendered any time by printing the file in the terminal.\n\n```\nUsage: main [--scale SCALE] [--wide-boyz WIDE-BOYZ] [--in] [--mode MODE] [--Charset CHARSET] [--custom CUSTOM] [--y-org Y-ORG] [--height HEIGHT] [--x-org X-ORG] [--width WIDTH] [--hue HUE] [--fps FPS] [PATH]\n\nPositional arguments:\n  PATH                   file path for an image\n\nOptions:\n  --scale SCALE, -s SCALE\n                         overall image scale [default: 1.0]\n  --wide-boyz WIDE-BOYZ, -w WIDE-BOYZ\n                         How wide you want it guv? (Widens the image) [default: 1.0]\n  --in, -i               read from stdin\n  --mode MODE, -m MODE   mode selection determines renderer [default: A]\n  --Charset CHARSET, -c CHARSET\n                         Charset selection determines the character set used by the renderer [default: 0]\n  --custom CUSTOM        provide a custom string to render with [default: \u2588]\n  --y-org Y-ORG          minimum Y, top of focus [default: 0]\n  --height HEIGHT        height, vertical size of focus [default: 0]\n  --x-org X-ORG          minimum X, left edge of focus [default: 0]\n  --width WIDTH          width, width of focus [default: 0]\n  --hue HUE              hue rotation angle in radians [default: 0.0]\n  --fps FPS              Provide an integer number of frames per second as an upper limit to the playback speed\n```\n"
     },
     {
         "name": "Last Player On The Left",
         "description": "A simple podcast streamer for the terminal! Last Player can subscribe to RSS Feeds, retrieve episode lists & descriptions, and play audio!",
         "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1",
+        "images": [],
         "raw": "<!-- markdownlint-disable MD004 MD033 MD034 -->\n\n<div align=\"center\">\n\n# Last Player On The Left\n\n</div>\n<p align=\"center\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/license/Wombatlord/last-player-on-the-left?logo=Github&logoColor=green\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/last-commit/Wombatlord/last-player-on-the-left?color=purple&logo=github&logoColor=purple\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/languages/top/Wombatlord/last-player-on-the-left?label=Go&logo=go\">\n\t<img alt=\"GitHub\" src=\"https://img.shields.io/github/go-mod/go-version/Wombatlord/last-player-on-the-left?logo=go\"></p>\n\n## Introduction\nLast Player On The Left is a simple, cross-platform podcast player written in Go and designed for the terminal.\n\n## Features\n- Terminal UI\n- Subscribe to RSS feeds\n- Stream episodes from subscribed feeds.\n- No dependancies on third-party players such as VLC.\n\n## Installation\nTo build from source, clone the repo and run `go build` in the project root.\n\n## Usage\n\n### Subscribing to a feed\nSubscribing to an RSS Feed saves the provided feed alias & url in **config.yaml**.\nAliases & Feeds can be manually added, or passed through on the command line.\n\nAdding a feed via the commandline will then run Last Player, if you want to add multiple feeds & aliases at once, this should currently be done manually in **config.yaml**.\n\nAlias is a user provided name for a given podcast.\n\n`./last-player-on-the-left.exe $ALIAS -s $URL`\n\nThe following will subscribe to Last Podcast On The Left, associating the alias LPOTL to the feed and saving this information in config.yaml.\n\n`./last-player-on-the-left.exe LPOTL -s https://feeds.simplecast.com/dCXMIpJz`\n\n### UI & Playback Controls\nOnce Last Player is running, key presses will be passed through to the panel with focus.\n\n- `TAB` or `Left / Right Arrow Keys` will change focus between panels.\n- `Enter` will interact with a highlighted element in a panel:\n\t- If the `Podcasts` panel has focus, `Enter` will populate the `Episodes` panel.\n\t- If the `Episodes` panel has focus, `Enter` will begin playback of the selected episode.\n- `P` will pause or resume the currently playing episode, doesn't depend on focus."
     },
     {
         "name": "St. Germain",
         "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
         "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1",
+        "images": [],
         "raw": "# St_Germain\n\nA python project for learning about working with an API.\nImplemented in python with discord.py.\n\nUses https://rws-cards-api.herokuapp.com/ for tarot data.\n\n## Database Management\n\nThe database management CLI for St Germaine is known as golem. Golem can be invoked in the following ways:\n\n\n### Flush\nTo drop and replace the database schema:\n```shell\npython golem.py flush\n```\n__WARNING__: This will purge any data currently in the database!\n\n### Run Migrations\nTo run pending migrations:\n```shell\npython golem.py migrate\n```\n\n"
     }
 ]

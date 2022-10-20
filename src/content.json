@@ -2,21 +2,41 @@
   {
     "name": "JStoneDEV",
     "description": "This site! Built with React & Bootstrap, this is a place to practice some front-end coding and talk about my projects.",
-    "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md"
+    "src": "https://raw.githubusercontent.com/Wombatlord/react-project/main/README.md",
+    "images": []
   },
   {
     "name": "Photerm",
     "description": "An image and video renderer for the terminal. Fun and experimentation is the guiding principle for Photerm. There's a certain inefficiency to this project, but if you ever wanted to send an image as a text file filled with control characters, this is one way to do it!",
-    "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1"
+    "src": "https://raw.githubusercontent.com/Wombatlord/Photerm/main/README.md?plain=1",
+    "images": [
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030922578568695868/unknown.png",
+        "title": "Midsommar",
+        "caption": "A frame from the film Midsommar rendered in the terminal with 'mmiiddssOOMMaarr' as the character palette."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1030903373643391126/unknown.png",
+        "title": "Son of Man, Magritte.",
+        "caption": "A painting by Magritte, rendered with the letters of his name."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1031273125029089360/unknown.png",
+        "title": "Akira poster",
+        "caption": "Cinematic poster for the film Akira, with full color cells for a 'de-rezzed' effect."
+      }
+    ]
   },
   {
     "name": "Last Player On The Left",
     "description": "A simple podcast streamer for the terminal! Last Player can subscribe to RSS Feeds, retrieve episode lists & descriptions, and play audio!",
-    "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1"
+    "src": "https://raw.githubusercontent.com/Wombatlord/last-player-on-the-left/main/README.md?plain=1",
+    "images": []
   },
   {
     "name": "St. Germain",
     "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
-    "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1"
+    "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1",
+    "images": []
   }
 ]
