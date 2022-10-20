@@ -43,6 +43,22 @@
     "name": "Loot History",
     "description": "This is a data visualisation app with a terminal user interface. Written in Python, it leverages Matplotlib & Pandas to take exported JSON data from the game World of Warcraft and produce plots. These allow team leaders to track player rewards across time and ensure some degree of fairness is enforced on the randomised rewards granted by the game.",
     "src": "https://raw.githubusercontent.com/Wombatlord/LootHistory/master/README.md",
-    "images": []
+    "images": [
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1032746344605036604/Y-bar-and-pie.png",
+        "title": "Team chart",
+        "caption": "An example chart showing ordered comparison of team members total rewards, as discrete total & percentage of total rewards within the team."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1032746365345857565/Valarielle-loot-over-time.png",
+        "title": "Player chart",
+        "caption": "Am example chart showing a single members cumulative data over time, plateus indicate no reward being awarded between dates."
+      },
+      {
+        "source": "https://cdn.discordapp.com/attachments/907003057164910643/1032747101060354058/unknown.png",
+        "title": "Terminal UI",
+        "caption": "A simple terminal interface allows date bounds to be set as well as choosing different visual styles for plots."
+      }
+    ]
   }
 ]
