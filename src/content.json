@@ -38,5 +38,11 @@
     "description": "Do you believe in the power of fortune telling? I don't, but I do think Tarot decks and their history are awesome, so I built this discord bot for generating tarot spreads! With a front-end provided by Discord, the back-end is the main project here, with a focus on extensible architecture, third party API interaction, and custom adapters for web, database, and local file access.",
     "src": "https://raw.githubusercontent.com/Wombatlord/St_Germain/master/README.md?plain=1",
     "images": []
+  },
+  {
+    "name": "Loot History",
+    "description": "This is a data visualisation app with a terminal user interface. Written in Python, it leverages Matplotlib & Pandas to take exported JSON data from the game World of Warcraft and produce plots. These allow team leaders to track player rewards across time and ensure some degree of fairness is enforced on the randomised rewards granted by the game.",
+    "src": "https://raw.githubusercontent.com/Wombatlord/LootHistory/master/README.md",
+    "images": []
   }
 ]
